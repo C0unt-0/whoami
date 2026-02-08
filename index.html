@@ -13,19 +13,19 @@
 /* ═══════ CUSTOM PROPERTIES ═══════ */
 :root {
   --bg: #060608;
-  --bg-card: #0c0c10;
-  --bg-card-hover: #111118;
+  --bg-card: #0d0d14;
+  --bg-card-hover: #131320;
   --green: #00ff88;
-  --green-dim: rgba(0,255,136,.15);
+  --green-dim: rgba(0,255,136,.18);
   --green-glow: rgba(0,255,136,.4);
-  --green-faint: rgba(0,255,136,.06);
+  --green-faint: rgba(0,255,136,.07);
   --cyan: #00e5ff;
-  --amber: #ff6b35;
-  --text: #d0d0d8;
-  --text-dim: #8a8a9a;
-  --text-faint: #50505e;
-  --border: #1a1a24;
-  --border-bright: #2a2a38;
+  --amber: #ff8a50;
+  --text: #e0dfe8;
+  --text-dim: #a8a6b8;
+  --text-faint: #706e82;
+  --border: #222235;
+  --border-bright: #333348;
   --mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', 'Cascadia Code', monospace;
   --sans: 'Space Grotesk', system-ui, sans-serif;
 }
@@ -68,7 +68,7 @@ a:hover { color: #fff; text-shadow: 0 0 12px var(--green-glow); }
 .scanlines::after {
   content: '';
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,.4));
+  background: radial-gradient(ellipse at center, transparent 50%, rgba(4,4,12,.45));
 }
 
 /* ═══════ NOISE OVERLAY ═══════ */
@@ -89,7 +89,7 @@ a:hover { color: #fff; text-shadow: 0 0 12px var(--green-glow); }
 /* ═══════ NAV ═══════ */
 nav {
   position: fixed; top: 2px; left: 0; right: 0; z-index: 999;
-  background: rgba(6,6,8,.88); backdrop-filter: blur(16px);
+  background: rgba(6,6,10,.92); backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border);
   padding: 0 20px; height: 44px;
   display: flex; align-items: center; gap: 4px;
@@ -138,7 +138,7 @@ section { margin-bottom: 64px; }
   box-shadow: 0 0 8px var(--green-glow);
   flex-shrink: 0;
 }
-.section-marker.dim { background: var(--text-faint); box-shadow: none; }
+.section-marker.dim { background: var(--text-dim); box-shadow: 0 0 4px rgba(168,166,184,.2); }
 .section-title {
   font-size: 11px; letter-spacing: 4px; color: var(--text-dim);
   text-transform: uppercase; white-space: nowrap;
@@ -162,7 +162,7 @@ section { margin-bottom: 64px; }
 .hero-name {
   font-family: var(--sans); font-size: clamp(28px, 8vw, 56px);
   font-weight: 400; line-height: 1.05; margin-bottom: 4px;
-  color: #e8e8f0;
+  color: #eeedf6;
 }
 .hero-name em {
   font-style: italic; color: var(--green);
@@ -191,7 +191,7 @@ section { margin-bottom: 64px; }
   border: 1px solid var(--green-dim); color: var(--green);
   letter-spacing: 2px; transition: all .3s ease;
 }
-.hero-tag:nth-child(3) { border-color: var(--text-faint); color: var(--text-dim); }
+.hero-tag:nth-child(3) { border-color: var(--border-bright); color: var(--text-dim); }
 .hero-tag:hover {
   background: var(--green-faint); border-color: var(--green);
   box-shadow: 0 0 12px var(--green-faint);
@@ -212,10 +212,10 @@ section { margin-bottom: 64px; }
 }
 .exp-item:last-child { border-bottom: none; margin-bottom: 0; }
 .exp-item:hover { padding-left: 4px; }
-.exp-item:hover .exp-role { color: #fff; }
+.exp-item:hover .exp-role { color: #f4f3ff; }
 .exp-meta { font-size: 11px; color: var(--text-dim); line-height: 1.8; }
 .exp-company { font-size: 11px; color: var(--text-dim); margin-top: 4px; }
-.exp-location { font-size: 10px; color: var(--text-faint); margin-top: 2px; }
+.exp-location { font-size: 10px; color: #807e92; margin-top: 2px; }
 .exp-role {
   font-family: var(--sans); font-size: 15px; font-weight: 600;
   color: var(--text); transition: color .3s ease;
@@ -252,7 +252,7 @@ section { margin-bottom: 64px; }
   font-family: var(--sans); font-size: 14px; font-weight: 600;
   color: var(--text);
 }
-.proj-org { font-size: 11px; color: var(--text-faint); margin-left: 6px; }
+.proj-org { font-size: 11px; color: #807e92; margin-left: 6px; }
 .proj-desc {
   font-size: 12px; color: var(--text-dim); margin-top: 8px; line-height: 1.7;
 }
@@ -349,7 +349,7 @@ section { margin-bottom: 64px; }
   color: var(--text);
 }
 .ref-role { font-size: 10px; color: var(--text-dim); margin-top: 4px; line-height: 1.5; }
-.ref-loc { font-size: 10px; color: var(--text-faint); margin-top: 2px; }
+.ref-loc { font-size: 10px; color: #807e92; margin-top: 2px; }
 .ref-email {
   font-size: 10px; color: var(--green); margin-top: 10px;
   word-break: break-all;
