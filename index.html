@@ -20,6 +20,10 @@
   --green-glow: rgba(0,255,136,.4);
   --green-faint: rgba(0,255,136,.07);
   --cyan: #00e5ff;
+  --red: #ff3c55;
+  --red-dim: rgba(255,60,85,.18);
+  --red-glow: rgba(255,60,85,.4);
+  --red-faint: rgba(255,60,85,.07);
   --amber: #ff8a50;
   --text: #e0dfe8;
   --text-dim: #a8a6b8;
@@ -138,7 +142,7 @@ section { margin-bottom: 64px; }
   box-shadow: 0 0 8px var(--green-glow);
   flex-shrink: 0;
 }
-.section-marker.dim { background: var(--text-dim); box-shadow: 0 0 4px rgba(168,166,184,.2); }
+.section-marker.dim { background: var(--red); box-shadow: 0 0 8px var(--red-glow); }
 .section-title {
   font-size: 11px; letter-spacing: 4px; color: var(--text-dim);
   text-transform: uppercase; white-space: nowrap;
@@ -191,7 +195,11 @@ section { margin-bottom: 64px; }
   border: 1px solid var(--green-dim); color: var(--green);
   letter-spacing: 2px; transition: all .3s ease;
 }
-.hero-tag:nth-child(3) { border-color: var(--border-bright); color: var(--text-dim); }
+.hero-tag:nth-child(3) { border-color: var(--red-dim); color: var(--red); }
+.hero-tag:nth-child(3):hover {
+  background: var(--red-faint); border-color: var(--red);
+  box-shadow: 0 0 12px var(--red-faint);
+}
 .hero-tag:hover {
   background: var(--green-faint); border-color: var(--green);
   box-shadow: 0 0 12px var(--green-faint);
@@ -290,8 +298,9 @@ section { margin-bottom: 64px; }
   color: var(--text);
 }
 .edu-ongoing {
-  font-size: 9px; color: var(--amber); letter-spacing: 2px;
+  font-size: 9px; color: var(--red); letter-spacing: 2px;
   margin-left: 6px; font-weight: 700;
+  text-shadow: 0 0 8px var(--red-glow);
 }
 .edu-school { font-size: 11px; color: var(--text-dim); margin-top: 3px; }
 
@@ -305,11 +314,21 @@ section { margin-bottom: 64px; }
 .interest-tag:nth-child(odd) {
   border-color: var(--green-dim); color: var(--green);
 }
+.interest-tag:nth-child(4),
+.interest-tag:nth-child(6) {
+  border-color: var(--red-dim); color: var(--red);
+}
 .interest-tag:hover {
   border-color: var(--green); color: var(--green);
   background: var(--green-faint);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px var(--green-faint);
+}
+.interest-tag:nth-child(4):hover,
+.interest-tag:nth-child(6):hover {
+  border-color: var(--red); color: var(--red);
+  background: var(--red-faint);
+  box-shadow: 0 4px 12px var(--red-faint);
 }
 
 /* ═══════ TRAINING ═══════ */
@@ -330,6 +349,10 @@ section { margin-bottom: 64px; }
   border-color: var(--green-dim); color: var(--green);
   background: var(--green-faint);
 }
+.training-item:nth-child(3n):hover {
+  border-color: var(--red-dim); color: var(--red);
+  background: var(--red-faint);
+}
 
 /* ═══════ REFERENCES ═══════ */
 .ref-grid {
@@ -340,9 +363,9 @@ section { margin-bottom: 64px; }
   background: var(--bg-card); transition: all .3s ease;
 }
 .ref-card:hover {
-  border-color: var(--border-bright); background: var(--bg-card-hover);
+  border-color: var(--red-dim); background: var(--bg-card-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,.3);
+  box-shadow: 0 8px 24px rgba(0,0,0,.3), 0 0 12px var(--red-faint);
 }
 .ref-name {
   font-family: var(--sans); font-size: 13px; font-weight: 600;
@@ -380,7 +403,7 @@ footer .blink {
   animation: glitchTop 3s ease-in-out infinite;
 }
 .glitch::after {
-  color: var(--amber);
+  color: var(--red);
   animation: glitchBottom 3s ease-in-out infinite;
 }
 
@@ -501,7 +524,7 @@ footer .blink {
   :root {
     --bg: #fff; --bg-card: #fff; --bg-card-hover: #fff;
     --green: #1a8a5a; --green-dim: #ddd; --green-glow: transparent; --green-faint: #f5f5f5;
-    --cyan: #1a8a5a; --amber: #c44;
+    --cyan: #1a8a5a; --red: #c44; --red-dim: #fdd; --red-glow: transparent; --red-faint: #fff5f5; --amber: #c44;
     --text: #1a1a1a; --text-dim: #555; --text-faint: #999;
     --border: #ddd; --border-bright: #ccc;
   }
