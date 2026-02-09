@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pubudu Nawarathna — CV // Terminal Output</title>
+<meta name="description" content="Senior Software Engineer / Security Engineer / AI & Automation — Pubudu Nawarathna's classified terminal CV">
+<meta name="theme-color" content="#0a0a12">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   CLASSIFIED TERMINAL OUTPUT — cv-v3
+   Dark mode CV that prints on dark paper
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --bg: #0a0a12;
+  --bg-card: #0f0f1a;
+  --bg-card-hover: #141422;
+  --green: #00ff88;
+  --green-dim: rgba(0,255,136,.15);
+  --green-glow: rgba(0,255,136,.35);
+  --green-faint: rgba(0,255,136,.06);
+  --red: #ff3c55;
+  --red-dim: rgba(255,60,85,.15);
+  --red-glow: rgba(255,60,85,.35);
+  --red-faint: rgba(255,60,85,.06);
+  --text: #c8c8d4;
+  --text-dim: #8a8a9e;
+  --text-faint: #4a4a5e;
+  --border: #1e1e30;
+  --border-bright: #2a2a40;
+  --font: 'Fira Code', monospace;
+}
+
+/* ═══════ RESET ═══════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 10px; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 24px 36px 24px 60px;
+  -webkit-font-smoothing: antialiased;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  position: relative;
+  counter-reset: line-counter;
+}
+
+a { color: var(--green); text-decoration: none; }
+::selection { background: var(--green); color: var(--bg); }
+
+/* ═══════ LINE NUMBERS — left margin ═══════ */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 48px;
+  background: rgba(6,6,14,.6);
+  border-right: 1px solid var(--border);
+  z-index: 0;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.line-numbered {
+  counter-increment: line-counter;
+  position: relative;
+}
+.line-numbered::before {
+  content: counter(line-counter);
+  position: absolute;
+  left: -48px;
+  width: 38px;
+  text-align: right;
+  font-size: 8.5px;
+  color: var(--text-faint);
+  opacity: .45;
+  font-family: var(--font);
+  line-height: inherit;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ═══════ BOOT SEQUENCE HEADER ═══════ */
+.boot-line {
+  font-size: 9px;
+  color: var(--text-faint);
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.boot-line .ok { color: var(--green); }
+.boot-line .fail { color: var(--red); }
+
+/* ═══════ HEADER / WHOAMI ═══════ */
+.header {
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-bright);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.prompt {
+  font-size: 10px;
+  color: var(--text-faint);
+  margin-bottom: 3px;
+}
+.prompt .path { color: var(--green); }
+.prompt .cmd { color: var(--text); }
+
+.whoami-name {
+  font-size: 26px;
+  font-weight: 700;
+  color: #eeedf6;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  margin-bottom: 2px;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.whoami-name .accent { color: var(--green); }
+
+.header-tags {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+.header-tag {
+  font-size: 9px;
+  padding: 3px 8px;
+  border: 1px solid var(--green-dim);
+  color: var(--green);
+  letter-spacing: 1.5px;
+  background: var(--green-faint);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.header-tag.red {
+  border-color: var(--red-dim);
+  color: var(--red);
+  background: var(--red-faint);
+}
+
+.contact-block {
+  margin-top: 10px;
+  font-size: 10px;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+.contact-block .key { color: var(--text-faint); }
+.contact-block .val { color: var(--green); }
+.contact-block a { color: var(--green); }
+
+.print-url {
+  display: none;
+}
+
+/* ═══════ SECTION HEADERS — shell comments ═══════ */
+.section-header {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-faint);
+  letter-spacing: 2px;
+  margin-top: 18px;
+  margin-bottom: 12px;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.section-header .hash { color: var(--green); }
+.section-header .bar { color: var(--border-bright); }
+
+/* ═══════ EXPERIENCE — structured YAML output ═══════ */
+.exp-entry {
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  break-inside: avoid;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.exp-entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.exp-meta-line {
+  font-size: 9.5px;
+  color: var(--text-faint);
+  margin-bottom: 1px;
+  line-height: 1.6;
+}
+.exp-meta-line .yaml-key { color: var(--text-dim); }
+.exp-meta-line .yaml-val { color: var(--text); }
+.exp-meta-line .yaml-val.highlight { color: #eeedf6; font-weight: 600; }
+.exp-meta-line .yaml-val.date { color: var(--green); }
+.exp-meta-line .yaml-val.org { color: var(--red); }
+
+.exp-bullets {
+  margin-top: 5px;
+  padding-left: 16px;
+}
+
+.exp-bullet {
+  font-size: 10px;
+  color: var(--text-dim);
+  margin-top: 3px;
+  position: relative;
+  padding-left: 16px;
+  line-height: 1.6;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.exp-bullet::before {
+  content: '\2192';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-size: 10px;
+}
+
+/* ═══════ PROJECT CARDS — green left border glow ═══════ */
+.proj-entry {
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  border-left: 2px solid var(--green);
+  box-shadow: -4px 0 12px rgba(0,255,136,.08), inset 1px 0 8px rgba(0,255,136,.03);
+  break-inside: avoid;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.proj-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: #eeedf6;
+}
+.proj-org {
+  font-size: 9.5px;
+  color: var(--text-faint);
+  margin-left: 4px;
+}
+
+.proj-bullets {
+  margin-top: 5px;
+}
+.proj-bullet {
+  font-size: 10px;
+  color: var(--text-dim);
+  margin-top: 3px;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.6;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.proj-bullet::before {
+  content: '\2192';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-size: 10px;
+}
+
+.proj-tags {
+  display: flex;
+  gap: 5px;
+  margin-top: 7px;
+  flex-wrap: wrap;
+}
+.proj-tag {
+  font-size: 8.5px;
+  padding: 2px 7px;
+  background: var(--green-faint);
+  border: 1px solid var(--border-bright);
+  color: var(--green);
+  letter-spacing: .5px;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ═══════ EDUCATION / INTERESTS GRID ═══════ */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.edu-entry {
+  margin-bottom: 8px;
+}
+.edu-degree {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text);
+}
+.edu-ongoing {
+  font-size: 8px;
+  color: var(--red);
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-left: 4px;
+}
+.edu-school {
+  font-size: 9.5px;
+  color: var(--text-dim);
+  margin-top: 1px;
+}
+
+.interest-grid {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.interest-tag {
+  font-size: 9.5px;
+  padding: 4px 10px;
+  border: 1px solid var(--border-bright);
+  color: var(--text-dim);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.interest-tag.green {
+  border-color: var(--green-dim);
+  color: var(--green);
+}
+.interest-tag.red {
+  border-color: var(--red-dim);
+  color: var(--red);
+}
+
+/* ═══════ TRAINING — package install output ═══════ */
+.training-group {
+  margin-bottom: 12px;
+  break-inside: avoid;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.training-provider {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--green);
+  letter-spacing: 1.5px;
+  margin-bottom: 5px;
+}
+.training-provider .registry { color: var(--text-faint); font-weight: 400; }
+
+.training-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.training-item {
+  font-size: 9px;
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-dim);
+  line-height: 1.5;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.training-item .ver { color: var(--green); font-size: 8px; }
+
+/* ═══════ REFERENCES — config file entries ═══════ */
+.ref-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+.ref-card {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  break-inside: avoid;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.ref-card .cfg-comment {
+  font-size: 8px;
+  color: var(--text-faint);
+  margin-bottom: 4px;
+  letter-spacing: 1px;
+}
+.ref-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: #eeedf6;
+}
+.ref-role {
+  font-size: 9px;
+  color: var(--text-dim);
+  margin-top: 2px;
+  line-height: 1.5;
+}
+.ref-loc {
+  font-size: 8.5px;
+  color: var(--text-faint);
+  margin-top: 1px;
+}
+.ref-email {
+  font-size: 9px;
+  color: var(--green);
+  margin-top: 5px;
+  word-break: break-all;
+}
+
+/* ═══════ FOOTER ═══════ */
+.footer {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-size: 9px;
+  color: var(--text-faint);
+  letter-spacing: 1px;
+  text-align: center;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.footer .code { color: var(--green); }
+
+/* ═══════ PRINT STYLES — KEEP DARK ═══════ */
+@page {
+  size: A4;
+  margin: 10mm 12mm;
+}
+
+@media print {
+  /* Force dark background to print */
+  html {
+    background: var(--bg) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    background: var(--bg) !important;
+    color: var(--text) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    padding: 0 24px 0 48px;
+    max-width: 100%;
+  }
+
+  /* Force all backgrounds to print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Line number gutter for print */
+  body::before {
+    position: absolute;
+    background: rgba(6,6,14,.6);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Show print-only URL */
+  .print-url {
+    display: block;
+    font-size: 9px;
+    color: var(--text-faint);
+    margin-top: 4px;
+  }
+  .print-url .val { color: var(--green); }
+
+  /* Page break control */
+  .exp-entry { break-inside: avoid; }
+  .proj-entry { break-inside: avoid; }
+  .ref-card { break-inside: avoid; }
+  .training-group { break-inside: avoid; }
+  .two-col { break-inside: avoid; }
+
+  /* Keep the project card styling intact */
+  .proj-entry {
+    background: var(--bg-card) !important;
+    border-left: 2px solid var(--green) !important;
+    box-shadow: -4px 0 12px rgba(0,255,136,.08) !important;
+  }
+
+  .ref-card {
+    background: var(--bg-card) !important;
+  }
+
+  .training-item {
+    background: var(--bg-card) !important;
+  }
+
+  .header-tag {
+    background: var(--green-faint) !important;
+  }
+  .header-tag.red {
+    background: var(--red-faint) !important;
+  }
+}
+
+/* ═══════ RESPONSIVE ═══════ */
+@media (max-width: 700px) {
+  body { padding: 16px 16px 16px 48px; }
+  .two-col { grid-template-columns: 1fr; gap: 16px; }
+  .ref-grid { grid-template-columns: 1fr; }
+  .whoami-name { font-size: 22px; }
+}
+
+@media (max-width: 480px) {
+  body { padding: 12px 12px 12px 40px; }
+  body::before { width: 32px; }
+  .line-numbered::before { left: -36px; width: 28px; font-size: 7.5px; }
+  .whoami-name { font-size: 18px; }
+  .header-tags { gap: 4px; }
+  .header-tag { font-size: 8px; padding: 2px 6px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ BOOT SEQUENCE ═══════ -->
+<div class="boot-line line-numbered"><span class="ok">[OK]</span> Loading kernel modules...</div>
+<div class="boot-line line-numbered"><span class="ok">[OK]</span> Mounting /dev/career</div>
+<div class="boot-line line-numbered"><span class="ok">[OK]</span> Initializing classified personnel record</div>
+<div class="boot-line line-numbered">────────────────────────────────────────────────────</div>
+
+<!-- ═══════ HEADER / WHOAMI ═══════ -->
+<header class="header line-numbered">
+  <div class="prompt"><span class="path">~/classified</span> $ <span class="cmd">whoami --verbose</span></div>
+  <h1 class="whoami-name">PUBUDU <span class="accent">NAWARATHNA</span></h1>
+  <div class="header-tags">
+    <span class="header-tag">SENIOR_SOFTWARE_ENGINEER</span>
+    <span class="header-tag">SECURITY_ENGINEER</span>
+    <span class="header-tag red">AI_&amp;_AUTOMATION</span>
+  </div>
+  <div class="contact-block">
+    <div><span class="key">email:</span> <span class="val">heshnawarathna@gmail.com</span></div>
+    <div><span class="key">phone:</span> <span class="val">+601111100548</span></div>
+    <div><span class="key">github:</span> <a href="https://github.com/C0unt-0">github.com/C0unt-0</a></div>
+    <div><span class="key">linkedin:</span> <a href="https://www.linkedin.com/in/pubudu-hashan-nawarathna-6653971a0/">linkedin/pubudu-hashan-nawarathna</a></div>
+  </div>
+  <div class="print-url"><span class="key">web:</span> <span class="val">c0unt-0.github.io/whoami</span></div>
+</header>
+
+<!-- ═══════ WORK EXPERIENCE ═══════ -->
+<div class="section-header line-numbered"><span class="hash">#</span> <span class="bar">═══</span> WORK_EXPERIENCE <span class="bar">═══════════════════════════════</span></div>
+
+<div class="exp-entry line-numbered">
+  <div class="exp-meta-line"><span class="yaml-key">period:</span> <span class="yaml-val date">Oct 2024 &ndash; Present</span></div>
+  <div class="exp-meta-line"><span class="yaml-key">org:</span> <span class="yaml-val org">IshanTech (M) Sdn Bhd</span></div>
+  <div class="exp-meta-line"><span class="yaml-key">role:</span> <span class="yaml-val highlight">Senior Software Engineer</span></div>
+  <div class="exp-bullets">
+    <div class="exp-bullet">Developed Splunk add-on integrations for third-party product APIs using Python.</div>
+    <div class="exp-bullet">Built custom Splunk applications and workflows using ReactJS, TypeScript, and the Splunk React UI framework.</div>
+  </div>
+</div>
+
+<div class="exp-entry line-numbered">
+  <div class="exp-meta-line"><span class="yaml-key">period:</span> <span class="yaml-val date">Oct 2020 &ndash; Oct 2024</span></div>
+  <div class="exp-meta-line"><span class="yaml-key">org:</span> <span class="yaml-val org">IshanTech (M) Sdn Bhd</span></div>
+  <div class="exp-meta-line"><span class="yaml-key">role:</span> <span class="yaml-val highlight">Security Engineer &mdash; Freelance Consultation</span></div>
+  <div class="exp-bullets">
+    <div class="exp-bullet">Served as subject matter expert on open-source security incident response software and workflows.</div>
+    <div class="exp-bullet">Researched and deployed POC on open-source SIRP using TheHive, Cortex, and MISP; supported production rollout and Splunk integration.</div>
+    <div class="exp-bullet">Developed Splunk add-on integrations for third-party APIs using Python.</div>
+    <div class="exp-bullet">Built custom Splunk applications and workflows using ReactJS.</div>
+  </div>
+</div>
+
+<div class="exp-entry line-numbered">
+  <div class="exp-meta-line"><span class="yaml-key">period:</span> <span class="yaml-val date">Jan 2024 &ndash; Oct 2024</span></div>
+  <div class="exp-meta-line"><span class="yaml-key">org:</span> <span class="yaml-val org">Axinom Pvt Ltd</span></div>
+  <div class="exp-meta-line"><span class="yaml-key">role:</span> <span class="yaml-val highlight">Software Engineer</span></div>
+  <div class="exp-bullets">
+    <div class="exp-bullet">Integrated Axinom DRM with diverse media players and encoding services across multiple tech stacks.</div>
+    <div class="exp-bullet">Authored customer-facing documentation and code samples for DRM integration guides.</div>
+    <div class="exp-bullet">Provided hands-on technical support to resolve DRM setup issues for enterprise clients.</div>
+  </div>
+</div>
+
+<div class="exp-entry line-numbered">
+  <div class="exp-meta-line"><span class="yaml-key">period:</span> <span class="yaml-val date">Mar 2023 &ndash; Dec 2023</span></div>
+  <div class="exp-meta-line"><span class="yaml-key">org:</span> <span class="yaml-val org">Axinom Pvt Ltd</span></div>
+  <div class="exp-meta-line"><span class="yaml-key">role:</span> <span class="yaml-val highlight">Associate Software Engineer</span></div>
+  <div class="exp-bullets">
+    <div class="exp-bullet">Built a unified authentication solution for company applications using NodeJS, TypeScript, and React, adhering to OAuth2 best practices.</div>
+    <div class="exp-bullet">Contributed to the core product team, developing a microservices stack with NodeJS, TypeScript, React, and GraphQL.</div>
+    <div class="exp-bullet">Gained deep experience in microservices, monorepos, microfrontends, Docker containerization, automated testing, and schema generation with Postgraphile.</div>
+  </div>
+</div>
+
+<div class="exp-entry line-numbered">
+  <div class="exp-meta-line"><span class="yaml-key">period:</span> <span class="yaml-val date">Mar 2021 &ndash; Mar 2023</span></div>
+  <div class="exp-meta-line"><span class="yaml-key">org:</span> <span class="yaml-val org">Axinom Pvt Ltd</span></div>
+  <div class="exp-meta-line"><span class="yaml-key">role:</span> <span class="yaml-val highlight">Apprentice Software Developer</span></div>
+  <div class="exp-bullets">
+    <div class="exp-bullet">Completed Axinom's internal Software Engineer training program.</div>
+    <div class="exp-bullet">Developed REST API endpoints and content management workflows using Node.js Express for the company website and documentation platform.</div>
+  </div>
+</div>
+
+<div class="exp-entry line-numbered">
+  <div class="exp-meta-line"><span class="yaml-key">period:</span> <span class="yaml-val date">Jul 2020 &ndash; Feb 2021</span></div>
+  <div class="exp-meta-line"><span class="yaml-key">org:</span> <span class="yaml-val org">Axinom Pvt Ltd</span></div>
+  <div class="exp-meta-line"><span class="yaml-key">role:</span> <span class="yaml-val highlight">Intern Software Developer (Part-Time)</span></div>
+  <div class="exp-bullets">
+    <div class="exp-bullet">Conducted R&amp;D under the chief software architect, building proof-of-concept projects to evaluate emerging technologies.</div>
+    <div class="exp-bullet">Contributed to the web development team on HTML/CSS, template engines, layout design, and JavaScript, following accessibility, performance, and SEO best practices.</div>
+  </div>
+</div>
+
+<div class="exp-entry line-numbered">
+  <div class="exp-meta-line"><span class="yaml-key">period:</span> <span class="yaml-val date">Jul 2020 &ndash; Feb 2021</span></div>
+  <div class="exp-meta-line"><span class="yaml-key">org:</span> <span class="yaml-val org">Axiata Digital Labs Pvt Ltd</span></div>
+  <div class="exp-meta-line"><span class="yaml-key">role:</span> <span class="yaml-val highlight">Associate &mdash; Security Operations</span></div>
+  <div class="exp-bullets">
+    <div class="exp-bullet">Designed and developed a synchronized ticketing system integration for the LogRhythm security monitoring platform using Python, Apache Airflow, and Docker.</div>
+    <div class="exp-bullet">Built live security metrics dashboards by integrating LogRhythm SQL databases with Power BI Service.</div>
+    <div class="exp-bullet">Developed tools for extracting vulnerability data from the Tenable API.</div>
+  </div>
+</div>
+
+<!-- ═══════ OTHER EXPERIENCE ═══════ -->
+<div class="section-header line-numbered"><span class="hash">#</span> <span class="bar">═══</span> OTHER_EXPERIENCE <span class="bar">═══════════════════════════</span></div>
+
+<div class="exp-entry line-numbered">
+  <div class="exp-meta-line"><span class="yaml-key">period:</span> <span class="yaml-val date">Apr 2019 &ndash; Jun 2020</span></div>
+  <div class="exp-meta-line"><span class="yaml-key">org:</span> <span class="yaml-val org">Axinom Pvt Ltd</span></div>
+  <div class="exp-meta-line"><span class="yaml-key">role:</span> <span class="yaml-val highlight">Customer Support Agent</span></div>
+  <div class="exp-bullets">
+    <div class="exp-bullet">Provided multilingual support to local and international customers via live chat, collaborating with teams across five countries.</div>
+    <div class="exp-bullet">Developed a Python/Flask application integrating REST APIs and ML libraries to enhance automated knowledge search and website features.</div>
+    <div class="exp-bullet">Managed DRM evaluation account workflows and served as first point of contact for evaluation users.</div>
+    <div class="exp-bullet">Configured and onboarded support teams on Jira Service Desk for 24/7 emergency product support.</div>
+  </div>
+</div>
+
+<div class="exp-entry line-numbered">
+  <div class="exp-meta-line"><span class="yaml-key">period:</span> <span class="yaml-val date">Feb 2015 &ndash; Mar 2019</span></div>
+  <div class="exp-meta-line"><span class="yaml-key">org:</span> <span class="yaml-val org">Dialog Axiata Pvt Ltd</span></div>
+  <div class="exp-meta-line"><span class="yaml-key">role:</span> <span class="yaml-val highlight">Customer Support Agent</span></div>
+  <div class="exp-bullets">
+    <div class="exp-bullet">Provided customer support via the company's live chat platform, collaborating with teams across five countries.</div>
+    <div class="exp-bullet">Designed and implemented automated, secure billing collection reporting for Wennappuwa and Negombo outlets.</div>
+  </div>
+</div>
+
+<div class="exp-entry line-numbered">
+  <div class="exp-meta-line"><span class="yaml-key">period:</span> <span class="yaml-val date">Jan 2014 &ndash; Jan 2015</span></div>
+  <div class="exp-meta-line"><span class="yaml-key">org:</span> <span class="yaml-val org">Indu Sri Lanka Travel</span></div>
+  <div class="exp-meta-line"><span class="yaml-key">role:</span> <span class="yaml-val highlight">Customer Relation Officer</span></div>
+  <div class="exp-bullets">
+    <div class="exp-bullet">Managed end-to-end branch operations at the Borella location.</div>
+  </div>
+</div>
+
+<!-- ═══════ PROJECTS ═══════ -->
+<div class="section-header line-numbered"><span class="hash">#</span> <span class="bar">═══</span> KEY_PROJECTS <span class="bar">═══════════════════════════════════</span></div>
+
+<div class="proj-entry line-numbered">
+  <div><span class="proj-name">Centralized Incident Ticket Routing System</span><span class="proj-org">&mdash; Axiata Global SOC</span></div>
+  <div class="proj-bullets">
+    <div class="proj-bullet">Engineered a Django and Apache Airflow middleware to unify fragmented ticketing systems across Axiata Group's multi-entity operations.</div>
+    <div class="proj-bullet">Automated security incident delegation by integrating the LogRhythm API with external platforms through a rule-based routing engine.</div>
+    <div class="proj-bullet">Enabled real-time bi-directional ticket synchronization, eliminating manual status tracking across disparate systems.</div>
+  </div>
+  <div class="proj-tags">
+    <span class="proj-tag">[LogRhythm]</span>
+    <span class="proj-tag">[Apache Airflow]</span>
+    <span class="proj-tag">[Python]</span>
+    <span class="proj-tag">[Django]</span>
+  </div>
+</div>
+
+<div class="proj-entry line-numbered">
+  <div><span class="proj-name">Security Data Analytics Pipeline</span><span class="proj-org">&mdash; Axiata Global SOC</span></div>
+  <div class="proj-bullets">
+    <div class="proj-bullet">Architected an ETL pipeline using Power BI and Power Automate, bypassing LogRhythm's native dashboarding limitations.</div>
+    <div class="proj-bullet">Delivered executive-ready dashboards and automated reporting workflows, turning raw logs into actionable security insights.</div>
+  </div>
+  <div class="proj-tags">
+    <span class="proj-tag">[Power BI]</span>
+    <span class="proj-tag">[Power Automate]</span>
+    <span class="proj-tag">[SQL]</span>
+  </div>
+</div>
+
+<div class="proj-entry line-numbered">
+  <div><span class="proj-name">Generative AI for Business Intelligence</span><span class="proj-org">&mdash; Axinom</span></div>
+  <div class="proj-bullets">
+    <div class="proj-bullet">Spearheaded R&amp;D and POC initiatives to integrate LLMs into enterprise business intelligence workflows.</div>
+    <div class="proj-bullet">Evaluated RAG architectures using Azure AI Studio (Foundry), PromptFlow, and LangFlow for scalable knowledge retrieval.</div>
+  </div>
+  <div class="proj-tags">
+    <span class="proj-tag">[AI]</span>
+    <span class="proj-tag">[Azure Foundry]</span>
+    <span class="proj-tag">[LangFlow]</span>
+  </div>
+</div>
+
+<div class="proj-entry line-numbered">
+  <div><span class="proj-name">Unified Authentication &amp; Authorization Service</span><span class="proj-org">&mdash; Axinom</span></div>
+  <div class="proj-bullets">
+    <div class="proj-bullet">Designed a centralized RBAC microservice within the Axinom Mosaic stack, unifying access control for internal and external services.</div>
+    <div class="proj-bullet">Implemented OAuth2 and OpenID Connect (OIDC) for secure, standards-compliant identity management.</div>
+  </div>
+  <div class="proj-tags">
+    <span class="proj-tag">[Azure CI/CD]</span>
+    <span class="proj-tag">[OAuth2]</span>
+    <span class="proj-tag">[Open ID]</span>
+    <span class="proj-tag">[NodeJS]</span>
+    <span class="proj-tag">[TypeScript]</span>
+    <span class="proj-tag">[Docker]</span>
+  </div>
+</div>
+
+<div class="proj-entry line-numbered">
+  <div><span class="proj-name">Developer Documentation Pipeline Migration</span><span class="proj-org">&mdash; Axinom</span></div>
+  <div class="proj-bullets">
+    <div class="proj-bullet">Architected a Git-based publishing pipeline using AsciiDoc and Asciidoctor.js, replacing legacy Confluence documentation.</div>
+    <div class="proj-bullet">Introduced version-controlled technical documentation, improving developer collaboration and content auditability.</div>
+  </div>
+  <div class="proj-tags">
+    <span class="proj-tag">[AsciiDoc]</span>
+    <span class="proj-tag">[Azure CI/CD]</span>
+    <span class="proj-tag">[NodeJS]</span>
+    <span class="proj-tag">[JavaScript]</span>
+    <span class="proj-tag">[Docker]</span>
+  </div>
+</div>
+
+<div class="proj-entry line-numbered">
+  <div><span class="proj-name">AI-Powered Knowledge Assistant</span><span class="proj-org">&mdash; Axinom</span></div>
+  <div class="proj-bullets">
+    <div class="proj-bullet">Built a multi-agent AI assistant using Flask and Celery to accelerate internal knowledge retrieval for support teams.</div>
+    <div class="proj-bullet">Shipped a Slack integration delivering context-aware product knowledge directly into client-facing support conversations.</div>
+  </div>
+  <div class="proj-tags">
+    <span class="proj-tag">[Python]</span>
+    <span class="proj-tag">[Sentence Transformers]</span>
+    <span class="proj-tag">[Azure CI/CD]</span>
+    <span class="proj-tag">[Docker]</span>
+  </div>
+</div>
+
+<div class="proj-entry line-numbered">
+  <div><span class="proj-name">Open Source SOC Ecosystem</span><span class="proj-org">&mdash; IshanTech</span></div>
+  <div class="proj-bullets">
+    <div class="proj-bullet">Deployed a full-stack open-source SOC ecosystem (TheHive, MISP, Cortex) via Docker Compose for third-party validation.</div>
+    <div class="proj-bullet">Automated incident response by integrating Cortex analyzers and responders with external security tooling.</div>
+  </div>
+  <div class="proj-tags">
+    <span class="proj-tag">[TheHive]</span>
+    <span class="proj-tag">[MISP]</span>
+    <span class="proj-tag">[Cortex]</span>
+    <span class="proj-tag">[Docker]</span>
+  </div>
+</div>
+
+<div class="proj-entry line-numbered">
+  <div><span class="proj-name">Azure Sentinel Attack Simulation</span><span class="proj-org">&mdash; Personal Project</span></div>
+  <div class="proj-bullets">
+    <div class="proj-bullet">Built a cloud-native SIEM lab on Azure Sentinel to emulate and analyze complex cyber attack scenarios.</div>
+    <div class="proj-bullet">Authored automated playbooks using Azure Logic Apps to accelerate threat detection, investigation, and response.</div>
+  </div>
+  <div class="proj-tags">
+    <span class="proj-tag">[Azure]</span>
+    <span class="proj-tag">[Sentinel]</span>
+    <span class="proj-tag">[Logic Apps]</span>
+  </div>
+</div>
+
+<!-- ═══════ EDUCATION & INTERESTS ═══════ -->
+<div class="two-col">
+  <div>
+    <div class="section-header line-numbered"><span class="hash">#</span> <span class="bar">═══</span> EDUCATION <span class="bar">═══════════════</span></div>
+    <div class="edu-entry">
+      <div class="edu-degree">MSc in Software Engineering <span class="edu-ongoing">ONGOING</span></div>
+      <div class="edu-school">University of Kingston</div>
+    </div>
+    <div class="edu-entry">
+      <div class="edu-degree">Foundation in Information Technology</div>
+      <div class="edu-school">University of Colombo &middot; 2017</div>
+    </div>
+  </div>
+
+  <div>
+    <div class="section-header line-numbered"><span class="hash">#</span> <span class="bar">═══</span> INTERESTS <span class="bar">═══════════════</span></div>
+    <div class="interest-grid">
+      <span class="interest-tag green">AI &amp; Automation</span>
+      <span class="interest-tag green">Software Development</span>
+      <span class="interest-tag green">Research &amp; Development</span>
+      <span class="interest-tag red">Cyber Security</span>
+      <span class="interest-tag">Computer Architecture</span>
+      <span class="interest-tag red">Reverse Engineering</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ PROFESSIONAL TRAINING ═══════ -->
+<div class="section-header line-numbered"><span class="hash">#</span> <span class="bar">═══</span> PROFESSIONAL_TRAINING <span class="bar">══════════════════════</span></div>
+
+<div class="training-group line-numbered">
+  <div class="training-provider"><span class="registry">$</span> pip install --source <span>SPLUNK</span></div>
+  <div class="training-list">
+    <span class="training-item">Developing SOAR Playbooks <span class="ver">installed</span></span>
+    <span class="training-item">Administering Splunk SOAR <span class="ver">installed</span></span>
+    <span class="training-item">Advanced SOAR Implementation <span class="ver">installed</span></span>
+    <span class="training-item">Investigating Incidents with Splunk SOAR <span class="ver">installed</span></span>
+  </div>
+</div>
+
+<div class="training-group line-numbered">
+  <div class="training-provider"><span class="registry">$</span> pip install --source <span>COURSERA</span></div>
+  <div class="training-list">
+    <span class="training-item">IBM Cybersecurity Analyst <span class="ver">installed</span></span>
+    <span class="training-item">Google Cloud Fundamentals: Core Infrastructure <span class="ver">installed</span></span>
+    <span class="training-item">Network Security &amp; Database Vulnerabilities <span class="ver">installed</span></span>
+    <span class="training-item">Cybersecurity Compliance Framework Standards &amp; Regulations <span class="ver">installed</span></span>
+    <span class="training-item">How Google does Machine Learning <span class="ver">installed</span></span>
+    <span class="training-item">Cybersecurity Capstone: Breach Response Case Studies <span class="ver">installed</span></span>
+    <span class="training-item">Operating Systems: Overview Administration and Security <span class="ver">installed</span></span>
+  </div>
+</div>
+
+<div class="training-group line-numbered">
+  <div class="training-provider"><span class="registry">$</span> pip install --source <span>PLURALSIGHT</span></div>
+  <div class="training-list">
+    <span class="training-item">Microsoft Azure Developer <span class="ver">installed</span></span>
+    <span class="training-item">Object-Oriented Programming Fundamentals in C# <span class="ver">installed</span></span>
+    <span class="training-item">DevSecOps and Security Chaos Engineering <span class="ver">installed</span></span>
+  </div>
+</div>
+
+<div class="training-group line-numbered">
+  <div class="training-provider"><span class="registry">$</span> pip install --source <span>LINKEDIN_LEARNING</span></div>
+  <div class="training-list">
+    <span class="training-item">Understanding &amp; Prioritizing Data Privacy <span class="ver">installed</span></span>
+    <span class="training-item">Cybersecurity Foundations <span class="ver">installed</span></span>
+    <span class="training-item">IT Security Foundations: Network Security <span class="ver">installed</span></span>
+    <span class="training-item">Cybersecurity for IT Professionals <span class="ver">installed</span></span>
+    <span class="training-item">Learning Secure Sockets Layer <span class="ver">installed</span></span>
+    <span class="training-item">IT Security Foundations: Operating System Security <span class="ver">installed</span></span>
+    <span class="training-item">IT Security Foundations: Core Concepts <span class="ver">installed</span></span>
+    <span class="training-item">Learning Computer Security Investigation and Response <span class="ver">installed</span></span>
+    <span class="training-item">Cybersecurity with Cloud Computing <span class="ver">installed</span></span>
+    <span class="training-item">Learning Computer Forensics <span class="ver">installed</span></span>
+    <span class="training-item">Cybersecurity Awareness: Social Engineering <span class="ver">installed</span></span>
+    <span class="training-item">Learning Cryptography and Network Security <span class="ver">installed</span></span>
+    <span class="training-item">Learning JIRA Service Desk <span class="ver">installed</span></span>
+  </div>
+</div>
+
+<div class="training-group line-numbered">
+  <div class="training-provider"><span class="registry">$</span> pip install --source <span>ATTACKIQ</span></div>
+  <div class="training-list">
+    <span class="training-item">Foundations of Operationalizing MITRE ATT&amp;CK <span class="ver">installed</span></span>
+    <span class="training-item">Introduction To FIN6 Emulation Plans <span class="ver">installed</span></span>
+  </div>
+</div>
+
+<div class="training-group line-numbered">
+  <div class="training-provider"><span class="registry">$</span> pip install --source <span>OTHER</span></div>
+  <div class="training-list">
+    <span class="training-item">Introduction to Quantum Computing &middot; Qubit by Qubit <span class="ver">installed</span></span>
+    <span class="training-item">CEH V9 Training Program &middot; CICRA Campus <span class="ver">installed</span></span>
+    <span class="training-item">OCJP Training &middot; DreamTeam Academy <span class="ver">installed</span></span>
+    <span class="training-item">Application Security &mdash; The Complete Guide &middot; Udemy <span class="ver">installed</span></span>
+  </div>
+</div>
+
+<!-- ═══════ REFERENCES ═══════ -->
+<div class="section-header line-numbered"><span class="hash">#</span> <span class="bar">═══</span> REFERENCES <span class="bar">═══════════════════════════════════</span></div>
+
+<div class="ref-grid">
+  <div class="ref-card">
+    <div class="cfg-comment"># [contact.0]</div>
+    <div class="ref-name">Ruwan Fernando</div>
+    <div class="ref-role">Software Architect &middot; Axinom Pvt Ltd</div>
+    <div class="ref-loc">Sri Lanka</div>
+    <div class="ref-email">r.fernando@axinom.com</div>
+  </div>
+  <div class="ref-card">
+    <div class="cfg-comment"># [contact.1]</div>
+    <div class="ref-name">Grigory Grin</div>
+    <div class="ref-role">Chief Developer Advocate &middot; Axinom GmbH</div>
+    <div class="ref-loc">Germany</div>
+    <div class="ref-email">grin@axinom.com</div>
+  </div>
+  <div class="ref-card">
+    <div class="cfg-comment"># [contact.2]</div>
+    <div class="ref-name">Amal Wickramasinghe</div>
+    <div class="ref-role">Group Governance Risk and Compliance Lead &middot; Axiata Cyber Fusion Center</div>
+    <div class="ref-loc">Malaysia</div>
+    <div class="ref-email">amal.wickramasinghe@axiata.com</div>
+  </div>
+</div>
+
+<!-- ═══════ FOOTER ═══════ -->
+<div class="footer line-numbered">
+  // EOF &mdash; process exited with code <span class="code">0</span>
+</div>
+
+</body>
+</html>
