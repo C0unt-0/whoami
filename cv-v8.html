@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pubudu Nawarathna &mdash; CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ================================================================
+   INFOGRAPHIC CV — cv-v8
+   Data visualization meets CV. Clean, colorful, information-dense.
+   ================================================================ */
+
+:root {
+  --teal: #00897b;
+  --coral: #e85d47;
+  --slate-blue: #5c6bc0;
+  --amber: #f9a825;
+  --charcoal: #2d2d2d;
+  --charcoal-light: #4a4a4a;
+  --charcoal-faint: #777;
+  --sidebar-bg: #f5f5f5;
+  --white: #ffffff;
+  --border: #e0e0e0;
+  --border-light: #eeeeee;
+  --heading: 'Nunito Sans', 'Helvetica Neue', Arial, sans-serif;
+  --body: 'Source Sans 3', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { font-size: 10px; }
+
+body {
+  font-family: var(--body);
+  color: var(--charcoal);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--teal);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+/* ================================================================
+   TWO-COLUMN LAYOUT
+   ================================================================ */
+.cv-wrapper {
+  display: grid;
+  grid-template-columns: 33% 67%;
+  max-width: 820px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* ================================================================
+   LEFT SIDEBAR
+   ================================================================ */
+.sidebar {
+  background: var(--sidebar-bg);
+  padding: 40px 24px 32px;
+  border-right: 1px solid var(--border);
+}
+
+/* --- Name block --- */
+.name {
+  font-family: var(--heading);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--charcoal);
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+.name em {
+  font-style: normal;
+  color: var(--teal);
+}
+
+.titles {
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+.title-item {
+  display: block;
+  font-family: var(--body);
+  font-size: 9.5px;
+  font-weight: 600;
+  color: var(--charcoal-light);
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+}
+
+/* --- Contact info --- */
+.contact-list {
+  margin-bottom: 28px;
+}
+.contact-item {
+  font-size: 9.5px;
+  color: var(--charcoal-light);
+  line-height: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.contact-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+}
+.contact-dot.teal { background: var(--teal); }
+.contact-dot.coral { background: var(--coral); }
+.contact-dot.blue { background: var(--slate-blue); }
+.contact-dot.amber { background: var(--amber); }
+.contact-item a {
+  color: var(--charcoal-light);
+}
+
+.online-link {
+  display: none;
+  font-size: 9.5px;
+  color: var(--charcoal-faint);
+  margin-top: 2px;
+  padding-left: 14px;
+}
+.online-link a { color: var(--teal); font-weight: 600; }
+
+/* --- Sidebar section headers --- */
+.side-section {
+  margin-bottom: 24px;
+}
+.side-section:last-child { margin-bottom: 0; }
+
+.section-head {
+  margin-bottom: 12px;
+}
+.section-bar {
+  width: 28px;
+  height: 4px;
+  border-radius: 2px;
+  margin-bottom: 6px;
+}
+.section-bar.teal { background: var(--teal); }
+.section-bar.coral { background: var(--coral); }
+.section-bar.blue { background: var(--slate-blue); }
+.section-bar.amber { background: var(--amber); }
+
+.section-label {
+  font-family: var(--heading);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--border);
+}
+.section-num {
+  font-size: 9px;
+  font-weight: 400;
+  color: var(--charcoal-faint);
+  margin-right: 6px;
+}
+
+/* --- Education timeline --- */
+.edu-timeline {
+  position: relative;
+  padding-left: 18px;
+}
+.edu-timeline::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--border);
+  border-radius: 1px;
+}
+.edu-entry {
+  position: relative;
+  margin-bottom: 14px;
+}
+.edu-entry:last-child { margin-bottom: 0; }
+.edu-entry::before {
+  content: '';
+  position: absolute;
+  left: -18px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--amber);
+  z-index: 1;
+}
+.edu-degree {
+  font-family: var(--heading);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1.4;
+}
+.edu-ongoing {
+  font-size: 7.5px;
+  font-weight: 700;
+  color: var(--coral);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-left: 4px;
+  background: rgba(232, 93, 71, 0.1);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+.edu-school {
+  font-size: 9px;
+  color: var(--charcoal-faint);
+  line-height: 1.5;
+}
+
+/* --- Interests as pills --- */
+.interest-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.interest-pill {
+  font-size: 8.5px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--teal);
+  border: 1px solid rgba(0, 137, 123, 0.3);
+  line-height: 1.5;
+}
+.interest-pill.sec {
+  background: transparent;
+  color: var(--charcoal-faint);
+  border-color: var(--border);
+  font-weight: 400;
+}
+
+/* --- Training compact --- */
+.train-group {
+  margin-bottom: 12px;
+}
+.train-group:last-child { margin-bottom: 0; }
+
+.train-provider {
+  font-family: var(--heading);
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--charcoal);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.train-courses {
+  font-size: 8.5px;
+  color: var(--charcoal-faint);
+  line-height: 1.7;
+}
+.train-sep {
+  color: var(--border);
+  margin: 0 3px;
+}
+
+/* ================================================================
+   RIGHT MAIN AREA
+   ================================================================ */
+.main {
+  padding: 40px 32px 32px;
+}
+
+/* --- Main section headers --- */
+.main-section {
+  margin-bottom: 32px;
+}
+.main-section:last-child { margin-bottom: 0; }
+
+.main-section-head {
+  margin-bottom: 18px;
+}
+
+/* ================================================================
+   EXPERIENCE TIMELINE
+   ================================================================ */
+.exp-timeline {
+  position: relative;
+  padding-left: 22px;
+}
+.exp-timeline::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--border);
+  border-radius: 1px;
+}
+
+.exp-entry {
+  position: relative;
+  margin-bottom: 22px;
+}
+.exp-entry:last-child { margin-bottom: 0; }
+
+.exp-entry::before {
+  content: '';
+  position: absolute;
+  left: -22px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--teal);
+  z-index: 1;
+}
+
+/* Alternate dot colors for visual interest */
+.exp-timeline.coral-line::before { background: rgba(232, 93, 71, 0.2); }
+.exp-timeline.coral-line .exp-entry::before { border-color: var(--coral); }
+
+.exp-date-badge {
+  display: inline-block;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  background: var(--teal);
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+.exp-timeline.coral-line .exp-date-badge {
+  background: var(--coral);
+}
+
+.exp-company {
+  font-family: var(--heading);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1.3;
+}
+.exp-role {
+  font-size: 10px;
+  color: var(--charcoal-light);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.exp-bullet {
+  font-size: 9.5px;
+  color: var(--charcoal-light);
+  line-height: 1.65;
+  padding-left: 14px;
+  position: relative;
+  margin-bottom: 2px;
+}
+.exp-bullet::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--teal);
+  opacity: 0.4;
+}
+.exp-timeline.coral-line .exp-bullet::before {
+  background: var(--coral);
+}
+
+/* ================================================================
+   PROJECTS 2-COLUMN GRID
+   ================================================================ */
+.proj-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.proj-card {
+  border: 1px solid var(--border-light);
+  border-top: 3px solid var(--teal);
+  padding: 14px 14px 12px;
+  border-radius: 0 0 4px 4px;
+  background: var(--white);
+}
+.proj-card:nth-child(4n+2) { border-top-color: var(--coral); }
+.proj-card:nth-child(4n+3) { border-top-color: var(--slate-blue); }
+.proj-card:nth-child(4n+4) { border-top-color: var(--amber); }
+
+.proj-name {
+  font-family: var(--heading);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1.3;
+}
+.proj-org {
+  font-size: 8.5px;
+  color: var(--charcoal-faint);
+  margin-bottom: 6px;
+  letter-spacing: 0.03em;
+}
+
+.proj-bullet {
+  font-size: 9px;
+  color: var(--charcoal-light);
+  line-height: 1.6;
+  padding-left: 12px;
+  position: relative;
+  margin-bottom: 2px;
+}
+.proj-bullet::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--charcoal-faint);
+  opacity: 0.35;
+}
+
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+.proj-tag {
+  font-size: 7.5px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 10px;
+  line-height: 1.5;
+}
+.proj-card:nth-child(4n+1) .proj-tag {
+  background: rgba(0, 137, 123, 0.1);
+  color: var(--teal);
+}
+.proj-card:nth-child(4n+2) .proj-tag {
+  background: rgba(232, 93, 71, 0.1);
+  color: var(--coral);
+}
+.proj-card:nth-child(4n+3) .proj-tag {
+  background: rgba(92, 107, 192, 0.1);
+  color: var(--slate-blue);
+}
+.proj-card:nth-child(4n+4) .proj-tag {
+  background: rgba(249, 168, 37, 0.15);
+  color: #c68400;
+}
+
+/* ================================================================
+   REFERENCES — full width bottom section
+   ================================================================ */
+.references-section {
+  grid-column: 1 / -1;
+  padding: 24px 32px 32px;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+}
+
+.ref-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.ref-card {
+  padding: 14px 16px;
+  background: var(--sidebar-bg);
+  border-radius: 6px;
+  border-left: 3px solid var(--slate-blue);
+}
+
+.ref-name {
+  font-family: var(--heading);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1.3;
+}
+.ref-role {
+  font-size: 9px;
+  color: var(--charcoal-light);
+  margin-top: 2px;
+  line-height: 1.5;
+}
+.ref-loc {
+  font-size: 8px;
+  font-weight: 600;
+  color: var(--charcoal-faint);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+.ref-email {
+  font-size: 8.5px;
+  margin-top: 6px;
+}
+.ref-email a {
+  color: var(--slate-blue);
+}
+
+/* ================================================================
+   PRINT STYLES
+   ================================================================ */
+@page {
+  size: A4;
+  margin: 10mm 0 10mm 0;
+}
+
+@media print {
+  html { font-size: 10px; }
+
+  body {
+    background: var(--white);
+    max-width: 100%;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cv-wrapper {
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  .sidebar {
+    background: var(--sidebar-bg) !important;
+  }
+
+  .online-link { display: block; }
+
+  .exp-date-badge {
+    background: var(--teal) !important;
+  }
+  .exp-timeline.coral-line .exp-date-badge {
+    background: var(--coral) !important;
+  }
+
+  .interest-pill {
+    background: var(--white) !important;
+  }
+  .interest-pill.sec {
+    background: transparent !important;
+  }
+
+  .ref-card {
+    background: var(--sidebar-bg) !important;
+  }
+
+  /* break control */
+  .exp-entry { break-inside: avoid; }
+  .proj-card { break-inside: avoid; }
+  .ref-card { break-inside: avoid; }
+  .train-group { break-inside: avoid; }
+  .edu-entry { break-inside: avoid; }
+  .side-section { break-inside: avoid; }
+
+  a { color: inherit; }
+  a[href]::after { content: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="cv-wrapper">
+
+<!-- ================================================================
+     LEFT SIDEBAR
+     ================================================================ -->
+<aside class="sidebar">
+
+  <!-- Name -->
+  <div class="name">Pubudu<br><em>Nawarathna</em></div>
+  <div class="titles">
+    <span class="title-item">Senior Software Engineer</span>
+    <span class="title-item">Security Engineer</span>
+    <span class="title-item">AI &amp; Automation</span>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-list">
+    <div class="contact-item"><span class="contact-dot teal"></span> heshnawarathna@gmail.com</div>
+    <div class="contact-item"><span class="contact-dot coral"></span> +601111100548</div>
+    <div class="contact-item"><span class="contact-dot blue"></span> <a href="https://github.com/C0unt-0">github.com/C0unt-0</a></div>
+    <div class="contact-item"><span class="contact-dot amber"></span> <a href="https://www.linkedin.com/in/pubudu-hashan-nawarathna-6653971a0/">linkedin/pubudu-hashan-nawarathna</a></div>
+    <div class="online-link"><a href="https://c0unt-0.github.io/whoami/">c0unt-0.github.io/whoami</a></div>
+  </div>
+
+  <!-- 04 Education -->
+  <div class="side-section">
+    <div class="section-head">
+      <div class="section-bar amber"></div>
+      <div class="section-label"><span class="section-num">04</span>Education</div>
+    </div>
+    <div class="edu-timeline">
+      <div class="edu-entry">
+        <div class="edu-degree">MSc in Software Engineering<span class="edu-ongoing">ONGOING</span></div>
+        <div class="edu-school">University of Kingston</div>
+      </div>
+      <div class="edu-entry">
+        <div class="edu-degree">Foundation in Information Technology</div>
+        <div class="edu-school">University of Colombo &middot; 2017</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 Interests -->
+  <div class="side-section">
+    <div class="section-head">
+      <div class="section-bar teal"></div>
+      <div class="section-label"><span class="section-num">05</span>Interests</div>
+    </div>
+    <div class="interest-pills">
+      <span class="interest-pill">AI &amp; Automation</span>
+      <span class="interest-pill">Software Development</span>
+      <span class="interest-pill">Research &amp; Development</span>
+      <span class="interest-pill sec">Cyber Security</span>
+      <span class="interest-pill">Computer Architecture</span>
+      <span class="interest-pill sec">Reverse Engineering</span>
+    </div>
+  </div>
+
+  <!-- 06 Professional Training -->
+  <div class="side-section">
+    <div class="section-head">
+      <div class="section-bar coral"></div>
+      <div class="section-label"><span class="section-num">06</span>Training</div>
+    </div>
+    <div class="train-group">
+      <div class="train-provider">Splunk</div>
+      <div class="train-courses">Splunk SOAR Certified Automation Developer</div>
+    </div>
+    <div class="train-group">
+      <div class="train-provider">Coursera</div>
+      <div class="train-courses">IBM Cybersecurity Analyst<span class="train-sep">&middot;</span>Google Cloud Fundamentals: Core Infrastructure<span class="train-sep">&middot;</span>Network Security &amp; Database Vulnerabilities<span class="train-sep">&middot;</span>Cybersecurity Compliance Framework, Standards &amp; Regulations<span class="train-sep">&middot;</span>How Google does Machine Learning<span class="train-sep">&middot;</span>Cybersecurity Capstone: Breach Response Case Studies<span class="train-sep">&middot;</span>Operating Systems: Overview, Administration, and Security</div>
+    </div>
+    <div class="train-group">
+      <div class="train-provider">Pluralsight</div>
+      <div class="train-courses">Microsoft Azure Developer<span class="train-sep">&middot;</span>Object-Oriented Programming Fundamentals in C#<span class="train-sep">&middot;</span>DevSecOps and Security Chaos Engineering</div>
+    </div>
+    <div class="train-group">
+      <div class="train-provider">LinkedIn Learning</div>
+      <div class="train-courses">Understanding &amp; Prioritizing Data Privacy<span class="train-sep">&middot;</span>Cybersecurity Foundations<span class="train-sep">&middot;</span>IT Security Foundations: Network Security<span class="train-sep">&middot;</span>Cybersecurity for IT Professionals<span class="train-sep">&middot;</span>Learning Secure Sockets Layer<span class="train-sep">&middot;</span>IT Security Foundations: Operating System Security<span class="train-sep">&middot;</span>IT Security Foundations: Core Concepts<span class="train-sep">&middot;</span>Learning Computer Security Investigation and Response<span class="train-sep">&middot;</span>Cybersecurity with Cloud Computing<span class="train-sep">&middot;</span>Learning Computer Forensics<span class="train-sep">&middot;</span>Cybersecurity Awareness: Social Engineering<span class="train-sep">&middot;</span>Learning Cryptography and Network Security<span class="train-sep">&middot;</span>Learning JIRA Service Desk</div>
+    </div>
+    <div class="train-group">
+      <div class="train-provider">AttackIQ</div>
+      <div class="train-courses">Foundations of Operationalizing MITRE ATT&amp;CK<span class="train-sep">&middot;</span>Introduction To FIN6 Emulation Plans</div>
+    </div>
+    <div class="train-group">
+      <div class="train-provider">Other</div>
+      <div class="train-courses">Introduction to Quantum Computing &middot; Qubit by Qubit<span class="train-sep">&middot;</span>CEH V9 Training Program &middot; CICRA Campus<span class="train-sep">&middot;</span>OCJP Training &middot; DreamTeam Academy<span class="train-sep">&middot;</span>Application Security &mdash; The Complete Guide &middot; Udemy</div>
+    </div>
+  </div>
+
+</aside>
+
+<!-- ================================================================
+     RIGHT MAIN AREA
+     ================================================================ -->
+<main class="main">
+
+  <!-- 01 Work Experience -->
+  <div class="main-section">
+    <div class="main-section-head">
+      <div class="section-bar teal"></div>
+      <div class="section-label"><span class="section-num">01</span>Work Experience</div>
+    </div>
+    <div class="exp-timeline">
+      <div class="exp-entry">
+        <div class="exp-date-badge">Oct 2024 &ndash; Present</div>
+        <div class="exp-company">IshanTech (M) Sdn Bhd</div>
+        <div class="exp-role">Senior Software Engineer</div>
+        <div class="exp-bullet">Developed Splunk add-on integrations for third-party product APIs using Python.</div>
+        <div class="exp-bullet">Built custom Splunk applications and workflows using ReactJS, TypeScript, and the Splunk React UI framework.</div>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-date-badge">Oct 2020 &ndash; Oct 2024</div>
+        <div class="exp-company">IshanTech (M) Sdn Bhd</div>
+        <div class="exp-role">Security Engineer &mdash; Freelance Consultation</div>
+        <div class="exp-bullet">Served as subject matter expert on open-source security incident response software and workflows.</div>
+        <div class="exp-bullet">Researched and deployed POC on open-source SIRP using TheHive, Cortex, and MISP; supported production rollout and Splunk integration.</div>
+        <div class="exp-bullet">Developed Splunk add-on integrations for third-party APIs using Python.</div>
+        <div class="exp-bullet">Built custom Splunk applications and workflows using ReactJS.</div>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-date-badge">Jan 2024 &ndash; Oct 2024</div>
+        <div class="exp-company">Axinom Pvt Ltd</div>
+        <div class="exp-role">Software Engineer</div>
+        <div class="exp-bullet">Integrated Axinom DRM with diverse media players and encoding services across multiple tech stacks.</div>
+        <div class="exp-bullet">Authored customer-facing documentation and code samples for DRM integration guides.</div>
+        <div class="exp-bullet">Provided hands-on technical support to resolve DRM setup issues for enterprise clients.</div>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-date-badge">Mar 2023 &ndash; Dec 2023</div>
+        <div class="exp-company">Axinom Pvt Ltd</div>
+        <div class="exp-role">Associate Software Engineer</div>
+        <div class="exp-bullet">Built a unified authentication solution for company applications using NodeJS, TypeScript, and React, adhering to OAuth2 best practices.</div>
+        <div class="exp-bullet">Contributed to the core product team, developing a microservices stack with NodeJS, TypeScript, React, and GraphQL.</div>
+        <div class="exp-bullet">Gained deep experience in microservices, monorepos, microfrontends, Docker containerization, automated testing, and schema generation with Postgraphile.</div>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-date-badge">Mar 2021 &ndash; Mar 2023</div>
+        <div class="exp-company">Axinom Pvt Ltd</div>
+        <div class="exp-role">Apprentice Software Developer</div>
+        <div class="exp-bullet">Completed Axinom's internal Software Engineer training program.</div>
+        <div class="exp-bullet">Developed REST API endpoints and content management workflows using Node.js Express for the company website and documentation platform.</div>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-date-badge">Jul 2020 &ndash; Feb 2021</div>
+        <div class="exp-company">Axinom Pvt Ltd</div>
+        <div class="exp-role">Intern Software Developer (Part-Time)</div>
+        <div class="exp-bullet">Conducted R&amp;D under the chief software architect, building proof-of-concept projects to evaluate emerging technologies.</div>
+        <div class="exp-bullet">Contributed to the web development team on HTML/CSS, template engines, layout design, and JavaScript, following accessibility, performance, and SEO best practices.</div>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-date-badge">Jul 2020 &ndash; Feb 2021</div>
+        <div class="exp-company">Axiata Digital Labs Pvt Ltd</div>
+        <div class="exp-role">Associate &mdash; Security Operations</div>
+        <div class="exp-bullet">Designed and developed a synchronized ticketing system integration for the LogRhythm security monitoring platform using Python, Apache Airflow, and Docker.</div>
+        <div class="exp-bullet">Built live security metrics dashboards by integrating LogRhythm SQL databases with Power BI Service.</div>
+        <div class="exp-bullet">Developed tools for extracting vulnerability data from the Tenable API.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 Other Experience -->
+  <div class="main-section">
+    <div class="main-section-head">
+      <div class="section-bar coral"></div>
+      <div class="section-label"><span class="section-num">02</span>Other Experience</div>
+    </div>
+    <div class="exp-timeline coral-line">
+      <div class="exp-entry">
+        <div class="exp-date-badge">Apr 2019 &ndash; Jun 2020</div>
+        <div class="exp-company">Axinom Pvt Ltd</div>
+        <div class="exp-role">Customer Support Agent</div>
+        <div class="exp-bullet">Provided multilingual support to local and international customers via live chat, collaborating with teams across five countries.</div>
+        <div class="exp-bullet">Developed a Python/Flask application integrating REST APIs and ML libraries to enhance automated knowledge search and website features.</div>
+        <div class="exp-bullet">Managed DRM evaluation account workflows and served as first point of contact for evaluation users.</div>
+        <div class="exp-bullet">Configured and onboarded support teams on Jira Service Desk for 24/7 emergency product support.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 Key Projects -->
+  <div class="main-section">
+    <div class="main-section-head">
+      <div class="section-bar blue"></div>
+      <div class="section-label"><span class="section-num">03</span>Key Projects</div>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-name">Threat &amp; Vulnerability Management Framework - Malaysian Financial Institution</div>
+        <div class="proj-org">IshanTech</div>
+        <div class="proj-bullet">Architected a workflow management system using custom Splunk React UI applications, integrating Splunk Enterprise Security and Splunk SOAR.</div>
+        <div class="proj-bullet">Developed custom SOAR connectors and automation playbooks to trigger vulnerability scans from Tenable SC and orchestrate email notification workflows.</div>
+        <div class="proj-bullet">Designed and implemented complex Enterprise Security correlation searches to facilitate scheduled SOAR automation triggers.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Splunk ES</span>
+          <span class="proj-tag">Splunk SOAR</span>
+          <span class="proj-tag">ReactJS</span>
+          <span class="proj-tag">Typescript</span>
+          <span class="proj-tag">Tenable SC</span>
+          <span class="proj-tag">Python</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-name">IT Security Tools Integration Pipeline - Malaysian Financial Institution</div>
+        <div class="proj-org">IshanTech</div>
+        <div class="proj-bullet">Built Python-based custom Splunk add-ons to ingest data from security and IT asset platforms including GLPI, OCS-NG, FireEye, and Tripwire.</div>
+        <div class="proj-bullet">Implemented custom scheduling and failure retry mechanisms to ensure reliable ingestion of high-volume datasets into Splunk.</div>
+        <div class="proj-bullet">Developed advanced correlation logic to normalize and cross-reference data across multiple API endpoints and platform extensions.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Splunk</span>
+          <span class="proj-tag">Python</span>
+          <span class="proj-tag">API Integrations</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-name">Open Source SOC Ecosystem - Malaysian Government Agency</div>
+        <div class="proj-org">IshanTech</div>
+        <div class="proj-bullet">Deployed a full-stack open-source SOC ecosystem (TheHive, MISP, Cortex) via Docker Compose</div>
+        <div class="proj-bullet">Automated incident response by integrating Cortex analyzers and responders with external security tooling.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">TheHive</span>
+          <span class="proj-tag">MISP</span>
+          <span class="proj-tag">Cortex</span>
+          <span class="proj-tag">Docker</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-name">Centralized Incident Ticket Routing System</div>
+        <div class="proj-org">Axiata Global SOC</div>
+        <div class="proj-bullet">Engineered a Django and Apache Airflow middleware to unify fragmented ticketing systems across Axiata Group's multi-entity operations.</div>
+        <div class="proj-bullet">Automated security incident delegation by integrating the LogRhythm API with external platforms through a rule-based routing engine.</div>
+        <div class="proj-bullet">Enabled real-time bi-directional ticket synchronization, eliminating manual status tracking across disparate systems.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">LogRhythm</span>
+          <span class="proj-tag">Apache Airflow</span>
+          <span class="proj-tag">Python</span>
+          <span class="proj-tag">Django</span>
+          <span class="proj-tag">Azure</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-name">Security Data Analytics Pipeline</div>
+        <div class="proj-org">Axiata Global SOC</div>
+        <div class="proj-bullet">Architected an ETL pipeline using Power BI and Power Automate, bypassing LogRhythm's native dashboarding limitations.</div>
+        <div class="proj-bullet">Delivered executive-ready dashboards and automated reporting workflows, turning raw logs into actionable security insights.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Power BI</span>
+          <span class="proj-tag">Power Automate</span>
+          <span class="proj-tag">SQL</span>
+          <span class="proj-tag">Azure</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-name">Generative AI for Business Intelligence</div>
+        <div class="proj-org">Axinom</div>
+        <div class="proj-bullet">Spearheaded R&amp;D and POC initiatives to integrate LLMs into enterprise business intelligence workflows.</div>
+        <div class="proj-bullet">Evaluated RAG architectures using Azure AI Studio (Foundry), PromptFlow, and LangFlow for scalable knowledge retrieval.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">AI</span>
+          <span class="proj-tag">Azure Foundry</span>
+          <span class="proj-tag">LangFlow</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-name">Unified Authentication &amp; Authorization Service</div>
+        <div class="proj-org">Axinom</div>
+        <div class="proj-bullet">Designed a centralized RBAC microservice within the Axinom Mosaic stack, unifying access control for internal and external services.</div>
+        <div class="proj-bullet">Implemented OAuth2 and OpenID Connect (OIDC) for secure, standards-compliant identity management.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Azure CI/CD</span>
+          <span class="proj-tag">OAuth2</span>
+          <span class="proj-tag">Open ID</span>
+          <span class="proj-tag">NodeJS</span>
+          <span class="proj-tag">TypeScript</span>
+          <span class="proj-tag">Docker</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-name">Developer Documentation Pipeline Migration</div>
+        <div class="proj-org">Axinom</div>
+        <div class="proj-bullet">Architected a Git-based publishing pipeline using AsciiDoc and Asciidoctor.js, replacing legacy Confluence documentation.</div>
+        <div class="proj-bullet">Introduced version-controlled technical documentation, improving developer collaboration and content auditability.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">AsciiDoc</span>
+          <span class="proj-tag">Azure CI/CD</span>
+          <span class="proj-tag">NodeJS</span>
+          <span class="proj-tag">JavaScript</span>
+          <span class="proj-tag">Docker</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-name">AI-Powered Knowledge Assistant</div>
+        <div class="proj-org">Axinom</div>
+        <div class="proj-bullet">Built a multi-agent AI assistant using Flask and Celery to accelerate internal knowledge retrieval for support teams.</div>
+        <div class="proj-bullet">Shipped a Slack integration delivering context-aware product knowledge directly into client-facing support conversations.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Python</span>
+          <span class="proj-tag">Sentence Transformers</span>
+          <span class="proj-tag">Azure CI/CD</span>
+          <span class="proj-tag">Docker</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-name">Azure Sentinel Attack Simulation</div>
+        <div class="proj-org">Personal Project</div>
+        <div class="proj-bullet">Built a cloud-native SIEM lab on Azure Sentinel to emulate and analyze complex cyber attack scenarios.</div>
+        <div class="proj-bullet">Authored automated playbooks using Azure Logic Apps to accelerate threat detection, investigation, and response.</div>
+        <div class="proj-tags">
+          <span class="proj-tag">Azure</span>
+          <span class="proj-tag">Sentinel</span>
+          <span class="proj-tag">Logic Apps</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ================================================================
+     REFERENCES — full width bottom
+     ================================================================ -->
+<section class="references-section">
+  <div class="main-section-head">
+    <div class="section-bar blue"></div>
+    <div class="section-label"><span class="section-num">07</span>References</div>
+  </div>
+  <div class="ref-grid">
+    <div class="ref-card">
+      <div class="ref-name">Ruwan Fernando</div>
+      <div class="ref-role">Software Architect &middot; Axinom Pvt Ltd</div>
+      <div class="ref-loc">Sri Lanka</div>
+      <div class="ref-email"><a href="mailto:r.fernando@axinom.com">r.fernando@axinom.com</a></div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-name">Grigory Grin</div>
+      <div class="ref-role">Chief Developer Advocate &middot; Axinom GmbH</div>
+      <div class="ref-loc">Germany</div>
+      <div class="ref-email"><a href="mailto:grin@axinom.com">grin@axinom.com</a></div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-name">Nazzamry Bin Halid</div>
+      <div class="ref-role">Ex-MSS ITSec PM &middot; Maybank</div>
+      <div class="ref-loc">Malaysia</div>
+      <div class="ref-email">+60193595126</div>
+    </div>
+  </div>
+</section>
+
+</div><!-- .cv-wrapper -->
+
+</body>
+</html>

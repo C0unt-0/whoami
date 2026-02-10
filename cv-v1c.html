@@ -7,11 +7,11 @@
 <meta name="description" content="Senior Software Engineer, Security Engineer, AI & Automation — Pubudu Nawarathna">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Archivo+Narrow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Archivo+Narrow:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ========================================================
-   SWISS / INTERNATIONAL TYPOGRAPHIC STYLE
-   Strict grid, black + white + Swiss red (#e63329)
+   MIDNIGHT PURPLE — Swiss / Bauhaus Dark Mode
+   Deep purple + gold + near-white
    ======================================================== */
 
 @page {
@@ -20,15 +20,17 @@
 }
 
 :root {
-  --black: #000;
-  --white: #fff;
-  --red: #e63329;
-  --gray-light: #ddd;
-  --gray-mid: #999;
-  --gray-section: #eaeaea;
-  --heading: 'Archivo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --deep-purple: #1a0e2e;
+  --royal-purple: #4a2d7a;
+  --gold: #c9a84c;
+  --near-white: #f8f6ff;
+  --lavender: #b8a9d4;
+  --card-bg: #251a3d;
+  --border-subtle: #3a2860;
+  --text-muted: #9a8bb8;
+  --heading: 'Syne', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --body: 'Archivo Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --col: 68px; /* base column unit */
+  --col: 68px;
 }
 
 /* ═══════ RESET ═══════ */
@@ -37,17 +39,19 @@ html { font-size: 10px; }
 body {
   font-family: var(--body);
   font-weight: 400;
-  color: var(--black);
-  background: var(--white);
+  color: var(--near-white);
+  background: var(--deep-purple);
   line-height: 1.5;
   max-width: 820px;
   margin: 0 auto;
   padding: 24px 28px 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
 }
-a { color: var(--black); text-decoration: none; }
-a:hover { color: var(--red); }
+a { color: var(--near-white); text-decoration: none; }
+a:hover { color: var(--gold); }
 
 /* ═══════ HEADER ═══════ */
 .header {
@@ -55,11 +59,11 @@ a:hover { color: var(--red); }
   padding-bottom: 12px;
   margin-bottom: 16px;
 }
-.header-red-bar {
+.header-gold-bar {
   display: block;
   width: 100%;
   height: 6px;
-  background: var(--red);
+  background: var(--gold);
   margin-bottom: 14px;
   print-color-adjust: exact;
   -webkit-print-color-adjust: exact;
@@ -74,17 +78,17 @@ a:hover { color: var(--red); }
 .name {
   font-family: var(--heading);
   font-size: 48px;
-  font-weight: 900;
+  font-weight: 800;
   line-height: 0.95;
   letter-spacing: -2px;
-  color: var(--black);
+  color: var(--near-white);
   text-transform: uppercase;
 }
 .name em {
   font-style: normal;
   font-weight: 400;
   text-decoration: underline;
-  text-decoration-color: var(--red);
+  text-decoration-color: var(--gold);
   text-underline-offset: 4px;
   text-decoration-thickness: 3px;
 }
@@ -100,8 +104,8 @@ a:hover { color: var(--red); }
   letter-spacing: 2.5px;
   text-transform: uppercase;
   padding: 4px 10px;
-  background: var(--black);
-  color: var(--white);
+  background: var(--royal-purple);
+  color: var(--near-white);
   print-color-adjust: exact;
   -webkit-print-color-adjust: exact;
 }
@@ -109,7 +113,8 @@ a:hover { color: var(--red); }
   margin-left: 1px;
 }
 .tagline span:last-child {
-  background: var(--red);
+  background: var(--gold);
+  color: var(--deep-purple);
   print-color-adjust: exact;
   -webkit-print-color-adjust: exact;
 }
@@ -118,11 +123,11 @@ a:hover { color: var(--red); }
   font-family: var(--body);
   font-size: 9px;
   line-height: 1.9;
-  color: #444;
+  color: var(--lavender);
   flex-shrink: 0;
 }
 .contact-block a {
-  color: var(--black);
+  color: var(--near-white);
   font-weight: 600;
 }
 .contact-label {
@@ -131,7 +136,7 @@ a:hover { color: var(--red); }
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--gray-mid);
+  color: var(--text-muted);
   display: block;
   margin-bottom: 2px;
 }
@@ -139,8 +144,10 @@ a:hover { color: var(--red); }
   display: block;
   width: 100%;
   height: 3px;
-  background: var(--black);
+  background: var(--gold);
   margin-top: 16px;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
 }
 .online-link {
   display: none;
@@ -148,10 +155,10 @@ a:hover { color: var(--red); }
   font-size: 8px;
   font-weight: 600;
   letter-spacing: 1px;
-  color: var(--gray-mid);
+  color: var(--text-muted);
   margin-top: 3px;
 }
-.online-link a { color: var(--black); font-weight: 700; }
+.online-link a { color: var(--gold); font-weight: 700; }
 
 /* ═══════ SECTION SYSTEM ═══════ */
 .section {
@@ -164,15 +171,15 @@ a:hover { color: var(--red); }
   gap: 10px;
   margin-bottom: 8px;
   position: relative;
-  border-bottom: 2px solid var(--black);
+  border-bottom: 2px solid var(--gold);
   padding-bottom: 4px;
   break-after: avoid;
 }
 .section-num {
   font-family: var(--heading);
   font-size: 38px;
-  font-weight: 900;
-  color: #c8c8c8;
+  font-weight: 800;
+  color: var(--gold);
   line-height: 1;
   letter-spacing: -2px;
   user-select: none;
@@ -183,17 +190,17 @@ a:hover { color: var(--red); }
   font-family: var(--heading);
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: 4px;
+  letter-spacing: 5px;
   text-transform: uppercase;
-  color: var(--black);
+  color: var(--near-white);
   position: relative;
   top: -2px;
 }
 .section-header-alt .section-title {
-  color: #555;
+  color: var(--lavender);
 }
 .section-header-alt {
-  border-bottom-color: #555;
+  border-bottom-color: var(--lavender);
 }
 
 /* ═══════ EXPERIENCE GRID ═══════ */
@@ -203,7 +210,7 @@ a:hover { color: var(--red); }
   gap: 0 14px;
   margin-bottom: 7px;
   padding-bottom: 7px;
-  border-bottom: 1px solid var(--gray-light);
+  border-bottom: 1px solid var(--border-subtle);
   page-break-inside: avoid;
   break-inside: avoid;
 }
@@ -220,13 +227,13 @@ a:hover { color: var(--red); }
   font-size: 8px;
   font-weight: 700;
   letter-spacing: 0.5px;
-  color: var(--black);
+  color: var(--gold);
   line-height: 1.5;
 }
 .exp-company {
   font-family: var(--body);
   font-size: 8.5px;
-  color: #666;
+  color: var(--lavender);
   font-weight: 500;
   margin-top: 1px;
   line-height: 1.4;
@@ -235,14 +242,14 @@ a:hover { color: var(--red); }
   font-family: var(--heading);
   font-size: 12.5px;
   font-weight: 800;
-  color: var(--black);
+  color: var(--near-white);
   line-height: 1.3;
   letter-spacing: -0.2px;
 }
 .exp-bullets { margin-top: 4px; }
 .exp-bullet {
   font-size: 9.5px;
-  color: #333;
+  color: var(--lavender);
   line-height: 1.55;
   padding-left: 12px;
   position: relative;
@@ -255,20 +262,21 @@ a:hover { color: var(--red); }
   top: 6px;
   width: 4px;
   height: 4px;
-  background: var(--black);
+  background: var(--gold);
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
 }
 
 /* ═══════ PROJECTS ═══════ */
 .proj {
   margin-bottom: 6px;
   padding: 6px 10px 7px;
-  border-left: 4px solid var(--black);
-  background: #fafafa;
+  border-left: 4px solid var(--gold);
+  background: var(--card-bg);
   page-break-inside: avoid;
   break-inside: avoid;
-}
-.proj:nth-child(even) {
-  border-left-color: #666;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
 }
 .proj-head {
   display: flex;
@@ -279,20 +287,20 @@ a:hover { color: var(--red); }
   font-family: var(--heading);
   font-size: 10.5px;
   font-weight: 800;
-  color: var(--black);
+  color: var(--near-white);
   letter-spacing: -0.1px;
 }
 .proj-org {
   font-family: var(--heading);
   font-size: 8px;
   font-weight: 600;
-  color: #888;
+  color: var(--text-muted);
   letter-spacing: 0.5px;
 }
 .proj-bullets { margin-top: 4px; }
 .proj-bullet {
   font-size: 9.5px;
-  color: #333;
+  color: var(--lavender);
   line-height: 1.5;
   padding-left: 12px;
   position: relative;
@@ -305,7 +313,9 @@ a:hover { color: var(--red); }
   top: 6px;
   width: 4px;
   height: 4px;
-  background: var(--black);
+  background: var(--gold);
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
 }
 .proj-tags {
   display: flex;
@@ -320,9 +330,11 @@ a:hover { color: var(--red); }
   letter-spacing: 1px;
   text-transform: uppercase;
   padding: 2px 7px;
-  border: 1.5px solid var(--black);
-  color: var(--black);
-  background: var(--white);
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  background: transparent;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
 }
 
 /* ═══════ EDUCATION & INTERESTS — SIDE BY SIDE ═══════ */
@@ -339,7 +351,7 @@ a:hover { color: var(--red); }
   font-family: var(--heading);
   font-size: 11.5px;
   font-weight: 800;
-  color: var(--black);
+  color: var(--near-white);
 }
 .edu-ongoing {
   display: inline-block;
@@ -347,8 +359,8 @@ a:hover { color: var(--red); }
   font-size: 6.5px;
   font-weight: 800;
   letter-spacing: 2.5px;
-  color: var(--white);
-  background: var(--red);
+  color: var(--deep-purple);
+  background: var(--gold);
   padding: 2px 7px 1px;
   margin-left: 4px;
   vertical-align: middle;
@@ -360,7 +372,7 @@ a:hover { color: var(--red); }
 .edu-school {
   font-family: var(--body);
   font-size: 9px;
-  color: #666;
+  color: var(--lavender);
   margin-top: 2px;
 }
 .interest-list {
@@ -374,12 +386,12 @@ a:hover { color: var(--red); }
   font-weight: 600;
   letter-spacing: 0.5px;
   padding: 4px 10px;
-  border: 1.5px solid var(--black);
-  color: var(--black);
+  border: 1.5px solid var(--lavender);
+  color: var(--lavender);
 }
 .interest-item.sec {
-  border-color: var(--red);
-  color: var(--red);
+  border-color: var(--gold);
+  color: var(--gold);
   font-weight: 700;
   print-color-adjust: exact;
   -webkit-print-color-adjust: exact;
@@ -396,10 +408,10 @@ a:hover { color: var(--red); }
   font-weight: 800;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--black);
+  color: var(--gold);
   padding-bottom: 4px;
   margin-bottom: 4px;
-  border-bottom: 1.5px solid var(--black);
+  border-bottom: 1.5px solid var(--gold);
   display: inline-block;
 }
 .train-list {
@@ -411,8 +423,8 @@ a:hover { color: var(--red); }
   font-family: var(--body);
   font-size: 8.5px;
   padding: 2px 8px;
-  border: 1px solid var(--gray-light);
-  color: #444;
+  border: 1px solid var(--border-subtle);
+  color: var(--lavender);
 }
 
 /* ═══════ REFERENCES ═══════ */
@@ -423,22 +435,24 @@ a:hover { color: var(--red); }
 }
 .ref {
   padding: 7px 10px;
-  border: 1.5px solid var(--black);
-  border-top: 4px solid var(--black);
-  background: var(--white);
+  border: 1.5px solid var(--border-subtle);
+  border-top: 4px solid var(--gold);
+  background: var(--card-bg);
   page-break-inside: avoid;
   break-inside: avoid;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
 }
 .ref-name {
   font-family: var(--heading);
   font-size: 10.5px;
   font-weight: 800;
-  color: var(--black);
+  color: var(--near-white);
 }
 .ref-role {
   font-family: var(--body);
   font-size: 8.5px;
-  color: #555;
+  color: var(--lavender);
   margin-top: 2px;
   line-height: 1.4;
 }
@@ -448,13 +462,13 @@ a:hover { color: var(--red); }
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--gray-mid);
+  color: var(--text-muted);
   margin-top: 3px;
 }
 .ref-email {
   font-family: var(--body);
   font-size: 8.5px;
-  color: var(--black);
+  color: var(--gold);
   font-weight: 600;
   margin-top: 5px;
   word-break: break-all;
@@ -465,11 +479,11 @@ a:hover { color: var(--red); }
   margin-top: 12px;
   position: relative;
 }
-.footer-red-bar {
+.footer-gold-bar {
   display: block;
   width: 100%;
   height: 4px;
-  background: var(--red);
+  background: var(--gold);
   print-color-adjust: exact;
   -webkit-print-color-adjust: exact;
 }
@@ -485,14 +499,14 @@ a:hover { color: var(--red); }
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--gray-mid);
+  color: var(--text-muted);
 }
 .footer-mark {
   font-family: var(--heading);
   font-size: 7px;
   font-weight: 700;
   letter-spacing: 2px;
-  color: var(--gray-mid);
+  color: var(--text-muted);
 }
 
 /* ═══════ GEOMETRIC DIVIDER ═══════ */
@@ -502,22 +516,21 @@ a:hover { color: var(--red); }
   gap: 0;
   margin: 8px 0;
 }
-.geo-divider .bar-black {
+.geo-divider .bar-gold {
   flex: 1;
   height: 2px;
-  background: var(--black);
-}
-.geo-divider .bar-red {
-  width: 40px;
-  height: 2px;
-  background: var(--red);
+  background: var(--gold);
   print-color-adjust: exact;
   -webkit-print-color-adjust: exact;
 }
-.geo-divider .sq {
-  width: 6px;
-  height: 6px;
-  background: var(--black);
+.geo-divider .diamond {
+  width: 8px;
+  height: 8px;
+  background: var(--royal-purple);
+  transform: rotate(45deg);
+  margin: 0 4px;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
 }
 
 /* ═══════ PRINT STYLES ═══════ */
@@ -526,6 +539,10 @@ a:hover { color: var(--red); }
   body {
     padding: 0;
     max-width: 100%;
+    background: var(--deep-purple);
+    color: var(--near-white);
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
   }
   .online-link { display: block; }
   .exp { break-inside: avoid; }
@@ -533,16 +550,21 @@ a:hover { color: var(--red); }
   .ref { break-inside: avoid; }
   .grid-2 { break-inside: avoid; }
   .train-group { break-inside: avoid; }
-  a { color: var(--black); }
+  a { color: var(--near-white); }
   a[href]::after { content: none; }
-  .header-red-bar,
-  .footer-red-bar,
-  .geo-divider .bar-red,
+  .header-gold-bar,
+  .header-rule,
+  .footer-gold-bar,
+  .geo-divider .bar-gold,
+  .geo-divider .diamond,
   .tagline span,
   .section-num,
   .edu-ongoing,
   .interest-item.sec,
   .proj,
+  .proj-tag,
+  .proj-bullet::before,
+  .exp-bullet::before,
   .ref {
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
@@ -556,7 +578,7 @@ a:hover { color: var(--red); }
      HEADER
      ════════════════════════════════════════════════ -->
 <div class="header">
-  <span class="header-red-bar"></span>
+  <span class="header-gold-bar"></span>
   <div class="header-content">
     <div class="name-block">
       <div class="name">Pubudu <em>Nawarathna</em></div>
@@ -941,11 +963,11 @@ a:hover { color: var(--red); }
 
 <!-- GEOMETRIC DIVIDER -->
 <div class="geo-divider">
-  <span class="bar-black"></span>
-  <span class="sq"></span>
-  <span class="bar-red"></span>
-  <span class="sq"></span>
-  <span class="bar-black"></span>
+  <span class="bar-gold"></span>
+  <span class="diamond"></span>
+  <span class="bar-gold"></span>
+  <span class="diamond"></span>
+  <span class="bar-gold"></span>
 </div>
 
 <!-- ════════════════════════════════════════════════
@@ -1058,7 +1080,7 @@ a:hover { color: var(--red); }
      FOOTER
      ════════════════════════════════════════════════ -->
 <div class="footer">
-  <span class="footer-red-bar"></span>
+  <span class="footer-gold-bar"></span>
   <div class="footer-content">
     <div class="footer-sig">Pubudu Nawarathna &mdash; Curriculum Vitae</div>
     <div class="footer-mark">c0unt-0/whoami</div>

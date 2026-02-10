@@ -1,0 +1,369 @@
+{
+  "personal": {
+    "firstName": "Pubudu",
+    "lastName": "Nawarathna",
+    "lastNameEmphasis": true,
+    "titles": [
+      "Senior Software Engineer",
+      "Security Engineer",
+      "AI & Automation"
+    ],
+    "email": "heshnawarathna@gmail.com",
+    "phone": "+601111100548",
+    "github": {
+      "url": "https://github.com/C0unt-0",
+      "display": "github.com/C0unt-0"
+    },
+    "linkedin": {
+      "url": "https://www.linkedin.com/in/pubudu-hashan-nawarathna-6653971a0/",
+      "display": "linkedin/pubudu-hashan-nawarathna"
+    },
+    "website": {
+      "url": "https://c0unt-0.github.io/whoami/",
+      "display": "c0unt-0.github.io/whoami"
+    }
+  },
+  "experience": [
+    {
+      "dates": "Oct 2024 – Present",
+      "company": "IshanTech (M) Sdn Bhd",
+      "role": "Senior Software Engineer",
+      "bullets": [
+        "Developed Splunk add-on integrations for third-party product APIs using Python.",
+        "Built custom Splunk applications and workflows using ReactJS, TypeScript, and the Splunk React UI framework."
+      ]
+    },
+    {
+      "dates": "Oct 2020 – Oct 2024",
+      "company": "IshanTech (M) Sdn Bhd",
+      "role": "Security Engineer — Freelance Consultation",
+      "location": "Remote, Malaysia",
+      "bullets": [
+        "Served as subject matter expert on open-source security incident response software and workflows.",
+        "Researched and deployed POC on open-source SIRP using TheHive, Cortex, and MISP; supported production rollout and Splunk integration.",
+        "Developed Splunk add-on integrations for third-party APIs using Python.",
+        "Built custom Splunk applications and workflows using ReactJS."
+      ]
+    },
+    {
+      "dates": "Jan 2024 – Oct 2024",
+      "company": "Axinom Pvt Ltd",
+      "role": "Software Engineer",
+      "bullets": [
+        "Integrated Axinom DRM with diverse media players and encoding services across multiple tech stacks.",
+        "Authored customer-facing documentation and code samples for DRM integration guides.",
+        "Provided hands-on technical support to resolve DRM setup issues for enterprise clients."
+      ]
+    },
+    {
+      "dates": "Mar 2023 – Dec 2023",
+      "company": "Axinom Pvt Ltd",
+      "role": "Associate Software Engineer",
+      "bullets": [
+        "Built a unified authentication solution for company applications using NodeJS, TypeScript, and React, adhering to OAuth2 best practices.",
+        "Contributed to the core product team, developing a microservices stack with NodeJS, TypeScript, React, and GraphQL.",
+        "Gained deep experience in microservices, monorepos, microfrontends, Docker containerization, automated testing, and schema generation with Postgraphile."
+      ]
+    },
+    {
+      "dates": "Mar 2021 – Mar 2023",
+      "company": "Axinom Pvt Ltd",
+      "role": "Apprentice Software Developer",
+      "bullets": [
+        "Completed Axinom's internal Software Engineer training program.",
+        "Developed REST API endpoints and content management workflows using Node.js Express for the company website and documentation platform."
+      ]
+    },
+    {
+      "dates": "Jul 2020 – Feb 2021",
+      "company": "Axinom Pvt Ltd",
+      "role": "Intern Software Developer (Part-Time)",
+      "bullets": [
+        "Conducted R&D under the chief software architect, building proof-of-concept projects to evaluate emerging technologies.",
+        "Contributed to the web development team on HTML/CSS, template engines, layout design, and JavaScript, following accessibility, performance, and SEO best practices."
+      ]
+    },
+    {
+      "dates": "Jul 2020 – Feb 2021",
+      "company": "Axiata Digital Labs Pvt Ltd",
+      "role": "Associate — Security Operations",
+      "bullets": [
+        "Designed and developed a synchronized ticketing system integration for the LogRhythm security monitoring platform using Python, Apache Airflow, and Docker.",
+        "Built live security metrics dashboards by integrating LogRhythm SQL databases with Power BI Service.",
+        "Developed tools for extracting vulnerability data from the Tenable API."
+      ]
+    }
+  ],
+  "otherExperience": [
+    {
+      "dates": "Apr 2019 – Jun 2020",
+      "company": "Axinom Pvt Ltd",
+      "role": "Customer Support Agent",
+      "bullets": [
+        "Provided multilingual support to local and international customers via live chat, collaborating with teams across five countries.",
+        "Developed a Python/Flask application integrating REST APIs and ML libraries to enhance automated knowledge search and website features.",
+        "Managed DRM evaluation account workflows and served as first point of contact for evaluation users.",
+        "Configured and onboarded support teams on Jira Service Desk for 24/7 emergency product support."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Threat & Vulnerability Management Framework - Malaysian Financial Institution",
+      "org": "IshanTech",
+      "bullets": [
+        "Architected a workflow management system using custom Splunk React UI applications, integrating Splunk Enterprise Security and Splunk SOAR.",
+        "Developed custom SOAR connectors and automation playbooks to trigger vulnerability scans from Tenable SC and orchestrate email notification workflows.",
+        "Designed and implemented complex Enterprise Security correlation searches to facilitate scheduled SOAR automation triggers."
+      ],
+      "tags": [
+        "Splunk ES",
+        "Splunk SOAR",
+        "ReactJS",
+        "Typescript",
+        "Tenable SC",
+        "Python"
+      ]
+    },
+    {
+      "name": "IT Security Tools Integration Pipeline - Malaysian Financial Institution",
+      "org": "IshanTech",
+      "bullets": [
+        "Built Python-based custom Splunk add-ons to ingest data from security and IT asset platforms including GLPI, OCS-NG, FireEye, and Tripwire.",
+        "Implemented custom scheduling and failure retry mechanisms to ensure reliable ingestion of high-volume datasets into Splunk.",
+        "Developed advanced correlation logic to normalize and cross-reference data across multiple API endpoints and platform extensions."
+      ],
+      "tags": ["Splunk", "Python", "API Integrations"]
+    },
+    {
+      "name": "Open Source SOC Ecosystem - Malaysian Government Agency",
+      "org": "IshanTech",
+      "bullets": [
+        "Deployed a full-stack open-source SOC ecosystem (TheHive, MISP, Cortex) via Docker Compose",
+        "Automated incident response by integrating Cortex analyzers and responders with external security tooling."
+      ],
+      "extendedBullets": [
+        "Configured MISP to enrich incident data with real-time threat intelligence feeds.",
+        "Simulated end-to-end incident lifecycles to validate ecosystem effectiveness in production-grade environments."
+      ],
+      "tags": ["TheHive", "MISP", "Cortex", "Docker"]
+    },
+    {
+      "name": "Centralized Incident Ticket Routing System",
+      "org": "Axiata Global SOC",
+      "bullets": [
+        "Engineered a Django and Apache Airflow middleware to unify fragmented ticketing systems across Axiata Group's multi-entity operations.",
+        "Automated security incident delegation by integrating the LogRhythm API with external platforms through a rule-based routing engine.",
+        "Enabled real-time bi-directional ticket synchronization, eliminating manual status tracking across disparate systems."
+      ],
+      "extendedBullets": [
+        "Leveraged Apache Airflow DAGs for task orchestration, improving system observability and error-handling efficiency."
+      ],
+      "tags": ["LogRhythm", "Apache Airflow", "Python", "Django", "Azure"]
+    },
+    {
+      "name": "Security Data Analytics Pipeline",
+      "org": "Axiata Global SOC",
+      "bullets": [
+        "Architected an ETL pipeline using Power BI and Power Automate, bypassing LogRhythm's native dashboarding limitations.",
+        "Delivered executive-ready dashboards and automated reporting workflows, turning raw logs into actionable security insights."
+      ],
+      "extendedBullets": [
+        "Established direct SQL connections to LogRhythm databases for high-fidelity, real-time security data extraction."
+      ],
+      "indexBulletOrder": [
+        "Architected an ETL pipeline using Power BI and Power Automate, bypassing LogRhythm's native dashboarding limitations.",
+        "Established direct SQL connections to LogRhythm databases for high-fidelity, real-time security data extraction.",
+        "Delivered executive-ready dashboards and automated reporting workflows, turning raw logs into actionable security insights."
+      ],
+      "tags": ["Power BI", "Power Automate", "SQL", "Azure"]
+    },
+    {
+      "name": "Generative AI for Business Intelligence",
+      "org": "Axinom",
+      "bullets": [
+        "Spearheaded R&D and POC initiatives to integrate LLMs into enterprise business intelligence workflows.",
+        "Evaluated RAG architectures using Azure AI Studio (Foundry), PromptFlow, and LangFlow for scalable knowledge retrieval."
+      ],
+      "extendedBullets": [
+        "Benchmarked leading AI products on accuracy, latency, and cost to determine enterprise deployment viability."
+      ],
+      "tags": ["AI", "Azure Foundry", "LangFlow"]
+    },
+    {
+      "name": "Unified Authentication & Authorization Service",
+      "org": "Axinom",
+      "bullets": [
+        "Designed a centralized RBAC microservice within the Axinom Mosaic stack, unifying access control for internal and external services.",
+        "Implemented OAuth2 and OpenID Connect (OIDC) for secure, standards-compliant identity management."
+      ],
+      "extendedBullets": [
+        "Reduced authorization complexity by consolidating custom RBAC policies into a single enforceable layer across the infrastructure."
+      ],
+      "tags": [
+        "Azure CI/CD",
+        "OAuth2",
+        "Open ID",
+        "NodeJS",
+        "TypeScript",
+        "Docker"
+      ]
+    },
+    {
+      "name": "Developer Documentation Pipeline Migration",
+      "org": "Axinom",
+      "bullets": [
+        "Architected a Git-based publishing pipeline using AsciiDoc and Asciidoctor.js, replacing legacy Confluence documentation.",
+        "Introduced version-controlled technical documentation, improving developer collaboration and content auditability."
+      ],
+      "extendedBullets": [
+        "Built an Azure CI/CD workflow to automate content processing, decoupling docs from core website logic."
+      ],
+      "indexBulletOrder": [
+        "Architected a Git-based publishing pipeline using AsciiDoc and Asciidoctor.js, replacing legacy Confluence documentation.",
+        "Built an Azure CI/CD workflow to automate content processing, decoupling docs from core website logic.",
+        "Introduced version-controlled technical documentation, improving developer collaboration and content auditability."
+      ],
+      "tags": ["AsciiDoc", "Azure CI/CD", "NodeJS", "JavaScript", "Docker"]
+    },
+    {
+      "name": "AI-Powered Knowledge Assistant",
+      "org": "Axinom",
+      "bullets": [
+        "Built a multi-agent AI assistant using Flask and Celery to accelerate internal knowledge retrieval for support teams.",
+        "Shipped a Slack integration delivering context-aware product knowledge directly into client-facing support conversations."
+      ],
+      "extendedBullets": [
+        "Integrated locally deployed LLMs with semantic search to query knowledge bases stored in Google Sheets."
+      ],
+      "indexBulletOrder": [
+        "Built a multi-agent AI assistant using Flask and Celery to accelerate internal knowledge retrieval for support teams.",
+        "Integrated locally deployed LLMs with semantic search to query knowledge bases stored in Google Sheets.",
+        "Shipped a Slack integration delivering context-aware product knowledge directly into client-facing support conversations."
+      ],
+      "tags": ["Python", "Sentence Transformers", "Azure CI/CD", "Docker"]
+    },
+
+    {
+      "name": "Azure Sentinel Attack Simulation",
+      "org": "Personal Project",
+      "bullets": [
+        "Built a cloud-native SIEM lab on Azure Sentinel to emulate and analyze complex cyber attack scenarios.",
+        "Authored automated playbooks using Azure Logic Apps to accelerate threat detection, investigation, and response."
+      ],
+      "tags": ["Azure", "Sentinel", "Logic Apps"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "MSc in Software Engineering",
+      "school": "University of Kingston",
+      "ongoing": true
+    },
+    {
+      "degree": "Foundation in Information Technology",
+      "school": "University of Colombo",
+      "year": "2017"
+    }
+  ],
+  "interests": [
+    { "name": "AI & Automation" },
+    { "name": "Software Development" },
+    { "name": "Research & Development" },
+    { "name": "Cyber Security", "secondary": true },
+    { "name": "Computer Architecture" },
+    { "name": "Reverse Engineering", "secondary": true }
+  ],
+  "training": [
+    {
+      "provider": "Splunk",
+      "courses": ["Splunk SOAR Certified Automation Developer"]
+    },
+    {
+      "provider": "Coursera",
+      "courses": [
+        "IBM Cybersecurity Analyst",
+        "Google Cloud Fundamentals: Core Infrastructure",
+        "Network Security & Database Vulnerabilities",
+        "Cybersecurity Compliance Framework, Standards & Regulations",
+        "How Google does Machine Learning",
+        "Cybersecurity Capstone: Breach Response Case Studies",
+        "Operating Systems: Overview, Administration, and Security"
+      ]
+    },
+    {
+      "provider": "Pluralsight",
+      "courses": [
+        "Microsoft Azure Developer",
+        "Object-Oriented Programming Fundamentals in C#",
+        "DevSecOps and Security Chaos Engineering"
+      ]
+    },
+    {
+      "provider": "LinkedIn Learning",
+      "courses": [
+        "Understanding & Prioritizing Data Privacy",
+        "Cybersecurity Foundations",
+        "IT Security Foundations: Network Security",
+        "Cybersecurity for IT Professionals",
+        "Learning Secure Sockets Layer",
+        "IT Security Foundations: Operating System Security",
+        "IT Security Foundations: Core Concepts",
+        "Learning Computer Security Investigation and Response",
+        "Cybersecurity with Cloud Computing",
+        "Learning Computer Forensics",
+        "Cybersecurity Awareness: Social Engineering",
+        "Learning Cryptography and Network Security",
+        "Learning JIRA Service Desk"
+      ]
+    },
+    {
+      "provider": "AttackIQ",
+      "courses": [
+        "Foundations of Operationalizing MITRE ATT&CK",
+        "Introduction To FIN6 Emulation Plans"
+      ]
+    },
+    {
+      "provider": "Other",
+      "courses": [
+        "Introduction to Quantum Computing · Qubit by Qubit",
+        "CEH V9 Training Program · CICRA Campus",
+        "OCJP Training · DreamTeam Academy",
+        "Application Security — The Complete Guide · Udemy"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "Ruwan Fernando",
+      "role": "Software Architect",
+      "company": "Axinom Pvt Ltd",
+      "location": "Sri Lanka",
+      "email": "r.fernando@axinom.com"
+    },
+    {
+      "name": "Grigory Grin",
+      "role": "Chief Developer Advocate",
+      "company": "Axinom GmbH",
+      "location": "Germany",
+      "email": "grin@axinom.com"
+    },
+    {
+      "name": "Nazzamry Bin Halid",
+      "role": "Ex-MSS ITSec PM",
+      "company": "Maybank",
+      "location": "Malaysia",
+      "phone": "+60193595126"
+    }
+  ],
+  "pullQuote": {
+    "role": "Senior Software Engineer",
+    "company": "IshanTech (M) Sdn Bhd",
+    "dates": "Oct 2024 to Present",
+    "description": "Building custom Splunk integrations and security automation tooling"
+  },
+  "footer": {
+    "dateline": "Kuala Lumpur — February 2026"
+  }
+}

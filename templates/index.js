@@ -1,10 +1,17 @@
-<!DOCTYPE html>
+'use strict';
+
+const h = require('./helpers');
+
+function render(data) {
+  const p = data.personal;
+
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pubudu Nawarathna — CV</title>
-<meta name="description" content="Senior Software Engineer · Security Engineer · AI & Automation — Pubudu Nawarathna's professional CV">
+<title>${h.escapeHtml(p.firstName)} ${h.escapeHtml(p.lastName)} — CV</title>
+<meta name="description" content="Senior Software Engineer · Security Engineer · AI & Automation — ${h.escapeHtml(p.firstName)} ${h.escapeHtml(p.lastName)}'s professional CV">
 <meta name="theme-color" content="#0a0a0a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -235,7 +242,7 @@ section { margin-bottom: 64px; }
   padding-left: 18px; position: relative; line-height: 1.7;
 }
 .exp-bullet::before {
-  content: '\2192'; position: absolute; left: 0;
+  content: '\\2192'; position: absolute; left: 0;
   color: var(--green); font-size: 12px;
 }
 
@@ -270,7 +277,7 @@ section { margin-bottom: 64px; }
   padding-left: 16px; position: relative; line-height: 1.7;
 }
 .proj-bullet::before {
-  content: '\2192'; position: absolute; left: 0;
+  content: '\\2192'; position: absolute; left: 0;
   color: var(--green); font-size: 12px;
 }
 .proj-tags { display: flex; gap: 6px; margin-top: 14px; flex-wrap: wrap; }
@@ -570,8 +577,8 @@ footer .blink {
   <!-- ═══════ HERO ═══════ -->
   <header id="hero" class="reveal visible">
     <div class="hero-comment">// CURRICULUM VITAE</div>
-    <h1 class="hero-name glitch" data-text="Pubudu Nawarathna">
-      Pubudu <em>Nawarathna</em><span class="hero-cursor"></span>
+    <h1 class="hero-name glitch" data-text="${h.escapeHtml(p.firstName)} ${h.escapeHtml(p.lastName)}">
+      ${h.escapeHtml(p.firstName)} <em>${h.escapeHtml(p.lastName)}</em><span class="hero-cursor"></span>
     </h1>
     <div class="hero-tags">
       <span class="hero-tag">SENIOR_SOFTWARE_ENG</span>
@@ -579,10 +586,10 @@ footer .blink {
       <span class="hero-tag">AI_&amp;_AUTOMATION</span>
     </div>
     <div class="hero-contact">
-      <span class="hl">heshnawarathna@gmail.com</span><br>
-      +601111100548<br>
-      <a href="https://github.com/C0unt-0" class="hl" target="_blank" rel="noopener">github.com/C0unt-0</a><br>
-      <a href="https://www.linkedin.com/in/pubudu-hashan-nawarathna-6653971a0/" class="hl" target="_blank" rel="noopener">linkedin/pubudu-hashan-nawarathna</a>
+      <span class="hl">${h.escapeHtml(p.email)}</span><br>
+      ${h.escapeHtml(p.phone)}<br>
+      <a href="${h.escapeHtml(p.github.url)}" class="hl" target="_blank" rel="noopener">${h.escapeHtml(p.github.display)}</a><br>
+      <a href="${h.escapeHtml(p.linkedin.url)}" class="hl" target="_blank" rel="noopener">${h.escapeHtml(p.linkedin.display)}</a>
     </div>
   </header>
 
@@ -594,109 +601,19 @@ footer .blink {
       <div class="section-line"></div>
     </div>
 
-    <div class="exp-item">
+${data.experience.map((exp, idx) => `    <div class="exp-item">
       <div class="exp-meta">
-        <div>Oct 2024 &ndash; Present</div>
-        <div class="exp-company">IshanTech (M) Sdn Bhd</div>
+        <div>${h.formatDates(exp.dates)}</div>
+        <div class="exp-company">${h.escapeHtml(exp.company)}</div>${exp.location ? `
+        <div class="exp-location">${h.escapeHtml(exp.location)}</div>` : ''}
       </div>
       <div>
-        <div class="exp-role">Senior Software Engineer</div>
+        <div class="exp-role">${h.formatRole(exp.role)}</div>
         <div class="exp-bullets">
-          <div class="exp-bullet">Developed Splunk add-on integrations for third-party product APIs using Python.</div>
-          <div class="exp-bullet">Built custom Splunk applications and workflows using ReactJS, TypeScript, and the Splunk React UI framework.</div>
+${exp.bullets.map(bullet => `          <div class="exp-bullet">${h.escapeHtml(bullet)}</div>`).join('\n')}
         </div>
       </div>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div>Oct 2020 &ndash; Oct 2024</div>
-        <div class="exp-company">IshanTech (M) Sdn Bhd</div>
-        <div class="exp-location">Remote, Malaysia</div>
-      </div>
-      <div>
-        <div class="exp-role">Security Engineer &mdash; Freelance Consultation</div>
-        <div class="exp-bullets">
-          <div class="exp-bullet">Served as subject matter expert on open-source security incident response software and workflows.</div>
-          <div class="exp-bullet">Researched and deployed POC on open-source SIRP using TheHive, Cortex, and MISP; supported production rollout and Splunk integration.</div>
-          <div class="exp-bullet">Developed Splunk add-on integrations for third-party APIs using Python.</div>
-          <div class="exp-bullet">Built custom Splunk applications and workflows using ReactJS.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div>Jan 2024 &ndash; Oct 2024</div>
-        <div class="exp-company">Axinom Pvt Ltd</div>
-      </div>
-      <div>
-        <div class="exp-role">Software Engineer</div>
-        <div class="exp-bullets">
-          <div class="exp-bullet">Integrated Axinom DRM with diverse media players and encoding services across multiple tech stacks.</div>
-          <div class="exp-bullet">Authored customer-facing documentation and code samples for DRM integration guides.</div>
-          <div class="exp-bullet">Provided hands-on technical support to resolve DRM setup issues for enterprise clients.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div>Mar 2023 &ndash; Dec 2023</div>
-        <div class="exp-company">Axinom Pvt Ltd</div>
-      </div>
-      <div>
-        <div class="exp-role">Associate Software Engineer</div>
-        <div class="exp-bullets">
-          <div class="exp-bullet">Built a unified authentication solution for company applications using NodeJS, TypeScript, and React, adhering to OAuth2 best practices.</div>
-          <div class="exp-bullet">Contributed to the core product team, developing a microservices stack with NodeJS, TypeScript, React, and GraphQL.</div>
-          <div class="exp-bullet">Gained deep experience in microservices, monorepos, microfrontends, Docker containerization, automated testing, and schema generation with Postgraphile.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div>Mar 2021 &ndash; Mar 2023</div>
-        <div class="exp-company">Axinom Pvt Ltd</div>
-      </div>
-      <div>
-        <div class="exp-role">Apprentice Software Developer</div>
-        <div class="exp-bullets">
-          <div class="exp-bullet">Completed Axinom's internal Software Engineer training program.</div>
-          <div class="exp-bullet">Developed REST API endpoints and content management workflows using Node.js Express for the company website and documentation platform.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div>Jul 2020 &ndash; Feb 2021</div>
-        <div class="exp-company">Axinom Pvt Ltd</div>
-      </div>
-      <div>
-        <div class="exp-role">Intern Software Developer (Part-Time)</div>
-        <div class="exp-bullets">
-          <div class="exp-bullet">Conducted R&amp;D under the chief software architect, building proof-of-concept projects to evaluate emerging technologies.</div>
-          <div class="exp-bullet">Contributed to the web development team on HTML/CSS, template engines, layout design, and JavaScript, following accessibility, performance, and SEO best practices.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div>Jul 2020 &ndash; Feb 2021</div>
-        <div class="exp-company">Axiata Digital Labs Pvt Ltd</div>
-      </div>
-      <div>
-        <div class="exp-role">Associate &mdash; Security Operations</div>
-        <div class="exp-bullets">
-          <div class="exp-bullet">Designed and developed a synchronized ticketing system integration for the LogRhythm security monitoring platform using Python, Apache Airflow, and Docker.</div>
-          <div class="exp-bullet">Built live security metrics dashboards by integrating LogRhythm SQL databases with Power BI Service.</div>
-          <div class="exp-bullet">Developed tools for extracting vulnerability data from the Tenable API.</div>
-        </div>
-      </div>
-    </div>
+    </div>`).join('\n\n')}
   </section>
 
   <!-- ═══════ OTHER WORK EXPERIENCE ═══════ -->
@@ -707,21 +624,18 @@ footer .blink {
       <div class="section-line"></div>
     </div>
 
-    <div class="exp-item">
+${data.otherExperience.map((exp, idx) => `    <div class="exp-item">
       <div class="exp-meta">
-        <div>Apr 2019 &ndash; Jun 2020</div>
-        <div class="exp-company">Axinom Pvt Ltd</div>
+        <div>${h.formatDates(exp.dates)}</div>
+        <div class="exp-company">${h.escapeHtml(exp.company)}</div>
       </div>
       <div>
-        <div class="exp-role">Customer Support Agent</div>
+        <div class="exp-role">${h.escapeHtml(exp.role)}</div>
         <div class="exp-bullets">
-          <div class="exp-bullet">Provided multilingual support to local and international customers via live chat, collaborating with teams across five countries.</div>
-          <div class="exp-bullet">Developed a Python/Flask application integrating REST APIs and ML libraries to enhance automated knowledge search and website features.</div>
-          <div class="exp-bullet">Managed DRM evaluation account workflows and served as first point of contact for evaluation users.</div>
-          <div class="exp-bullet">Configured and onboarded support teams on Jira Service Desk for 24/7 emergency product support.</div>
+${exp.bullets.map(bullet => `          <div class="exp-bullet">${h.escapeHtml(bullet)}</div>`).join('\n')}
         </div>
       </div>
-    </div>
+    </div>`).join('\n\n')}
 
   </section>
 
@@ -733,169 +647,19 @@ footer .blink {
       <div class="section-line"></div>
     </div>
 
-    <div class="proj-item">
-      <span class="proj-name">Threat &amp; Vulnerability Management Framework - Malaysian Financial Institution</span>
-      <span class="proj-org">&mdash; IshanTech</span>
+${data.projects.map(proj => {
+  const allBullets = proj.indexBulletOrder || [...proj.bullets, ...(proj.extendedBullets || [])];
+  return `    <div class="proj-item">
+      <span class="proj-name">${h.escapeHtml(proj.name)}</span>
+      <span class="proj-org">&mdash; ${h.escapeHtml(proj.org)}</span>
       <div class="proj-bullets">
-        <div class="proj-bullet">Architected a workflow management system using custom Splunk React UI applications, integrating Splunk Enterprise Security and Splunk SOAR.</div>
-        <div class="proj-bullet">Developed custom SOAR connectors and automation playbooks to trigger vulnerability scans from Tenable SC and orchestrate email notification workflows.</div>
-        <div class="proj-bullet">Designed and implemented complex Enterprise Security correlation searches to facilitate scheduled SOAR automation triggers.</div>
+${allBullets.map(bullet => `        <div class="proj-bullet">${h.escapeHtml(bullet)}</div>`).join('\n')}
       </div>
       <div class="proj-tags">
-        <span class="proj-tag">Splunk ES</span>
-        <span class="proj-tag">Splunk SOAR</span>
-        <span class="proj-tag">ReactJS</span>
-        <span class="proj-tag">Typescript</span>
-        <span class="proj-tag">Tenable SC</span>
-        <span class="proj-tag">Python</span>
+${proj.tags.map(tag => `        <span class="proj-tag">${h.escapeHtml(tag)}</span>`).join('\n')}
       </div>
-    </div>
-
-    <div class="proj-item">
-      <span class="proj-name">IT Security Tools Integration Pipeline - Malaysian Financial Institution</span>
-      <span class="proj-org">&mdash; IshanTech</span>
-      <div class="proj-bullets">
-        <div class="proj-bullet">Built Python-based custom Splunk add-ons to ingest data from security and IT asset platforms including GLPI, OCS-NG, FireEye, and Tripwire.</div>
-        <div class="proj-bullet">Implemented custom scheduling and failure retry mechanisms to ensure reliable ingestion of high-volume datasets into Splunk.</div>
-        <div class="proj-bullet">Developed advanced correlation logic to normalize and cross-reference data across multiple API endpoints and platform extensions.</div>
-      </div>
-      <div class="proj-tags">
-        <span class="proj-tag">Splunk</span>
-        <span class="proj-tag">Python</span>
-        <span class="proj-tag">API Integrations</span>
-      </div>
-    </div>
-
-    <div class="proj-item">
-      <span class="proj-name">Open Source SOC Ecosystem - Malaysian Government Agency</span>
-      <span class="proj-org">&mdash; IshanTech</span>
-      <div class="proj-bullets">
-        <div class="proj-bullet">Deployed a full-stack open-source SOC ecosystem (TheHive, MISP, Cortex) via Docker Compose</div>
-        <div class="proj-bullet">Automated incident response by integrating Cortex analyzers and responders with external security tooling.</div>
-        <div class="proj-bullet">Configured MISP to enrich incident data with real-time threat intelligence feeds.</div>
-        <div class="proj-bullet">Simulated end-to-end incident lifecycles to validate ecosystem effectiveness in production-grade environments.</div>
-      </div>
-      <div class="proj-tags">
-        <span class="proj-tag">TheHive</span>
-        <span class="proj-tag">MISP</span>
-        <span class="proj-tag">Cortex</span>
-        <span class="proj-tag">Docker</span>
-      </div>
-    </div>
-
-    <div class="proj-item">
-      <span class="proj-name">Centralized Incident Ticket Routing System</span>
-      <span class="proj-org">&mdash; Axiata Global SOC</span>
-      <div class="proj-bullets">
-        <div class="proj-bullet">Engineered a Django and Apache Airflow middleware to unify fragmented ticketing systems across Axiata Group's multi-entity operations.</div>
-        <div class="proj-bullet">Automated security incident delegation by integrating the LogRhythm API with external platforms through a rule-based routing engine.</div>
-        <div class="proj-bullet">Enabled real-time bi-directional ticket synchronization, eliminating manual status tracking across disparate systems.</div>
-        <div class="proj-bullet">Leveraged Apache Airflow DAGs for task orchestration, improving system observability and error-handling efficiency.</div>
-      </div>
-      <div class="proj-tags">
-        <span class="proj-tag">LogRhythm</span>
-        <span class="proj-tag">Apache Airflow</span>
-        <span class="proj-tag">Python</span>
-        <span class="proj-tag">Django</span>
-        <span class="proj-tag">Azure</span>
-      </div>
-    </div>
-
-    <div class="proj-item">
-      <span class="proj-name">Security Data Analytics Pipeline</span>
-      <span class="proj-org">&mdash; Axiata Global SOC</span>
-      <div class="proj-bullets">
-        <div class="proj-bullet">Architected an ETL pipeline using Power BI and Power Automate, bypassing LogRhythm's native dashboarding limitations.</div>
-        <div class="proj-bullet">Established direct SQL connections to LogRhythm databases for high-fidelity, real-time security data extraction.</div>
-        <div class="proj-bullet">Delivered executive-ready dashboards and automated reporting workflows, turning raw logs into actionable security insights.</div>
-      </div>
-      <div class="proj-tags">
-        <span class="proj-tag">Power BI</span>
-        <span class="proj-tag">Power Automate</span>
-        <span class="proj-tag">SQL</span>
-        <span class="proj-tag">Azure</span>
-      </div>
-    </div>
-
-    <div class="proj-item">
-      <span class="proj-name">Generative AI for Business Intelligence</span>
-      <span class="proj-org">&mdash; Axinom</span>
-      <div class="proj-bullets">
-        <div class="proj-bullet">Spearheaded R&amp;D and POC initiatives to integrate LLMs into enterprise business intelligence workflows.</div>
-        <div class="proj-bullet">Evaluated RAG architectures using Azure AI Studio (Foundry), PromptFlow, and LangFlow for scalable knowledge retrieval.</div>
-        <div class="proj-bullet">Benchmarked leading AI products on accuracy, latency, and cost to determine enterprise deployment viability.</div>
-      </div>
-      <div class="proj-tags">
-        <span class="proj-tag">AI</span>
-        <span class="proj-tag">Azure Foundry</span>
-        <span class="proj-tag">LangFlow</span>
-      </div>
-    </div>
-
-    <div class="proj-item">
-      <span class="proj-name">Unified Authentication &amp; Authorization Service</span>
-      <span class="proj-org">&mdash; Axinom</span>
-      <div class="proj-bullets">
-        <div class="proj-bullet">Designed a centralized RBAC microservice within the Axinom Mosaic stack, unifying access control for internal and external services.</div>
-        <div class="proj-bullet">Implemented OAuth2 and OpenID Connect (OIDC) for secure, standards-compliant identity management.</div>
-        <div class="proj-bullet">Reduced authorization complexity by consolidating custom RBAC policies into a single enforceable layer across the infrastructure.</div>
-      </div>
-      <div class="proj-tags">
-        <span class="proj-tag">Azure CI/CD</span>
-        <span class="proj-tag">OAuth2</span>
-        <span class="proj-tag">Open ID</span>
-        <span class="proj-tag">NodeJS</span>
-        <span class="proj-tag">TypeScript</span>
-        <span class="proj-tag">Docker</span>
-      </div>
-    </div>
-
-    <div class="proj-item">
-      <span class="proj-name">Developer Documentation Pipeline Migration</span>
-      <span class="proj-org">&mdash; Axinom</span>
-      <div class="proj-bullets">
-        <div class="proj-bullet">Architected a Git-based publishing pipeline using AsciiDoc and Asciidoctor.js, replacing legacy Confluence documentation.</div>
-        <div class="proj-bullet">Built an Azure CI/CD workflow to automate content processing, decoupling docs from core website logic.</div>
-        <div class="proj-bullet">Introduced version-controlled technical documentation, improving developer collaboration and content auditability.</div>
-      </div>
-      <div class="proj-tags">
-        <span class="proj-tag">AsciiDoc</span>
-        <span class="proj-tag">Azure CI/CD</span>
-        <span class="proj-tag">NodeJS</span>
-        <span class="proj-tag">JavaScript</span>
-        <span class="proj-tag">Docker</span>
-      </div>
-    </div>
-
-    <div class="proj-item">
-      <span class="proj-name">AI-Powered Knowledge Assistant</span>
-      <span class="proj-org">&mdash; Axinom</span>
-      <div class="proj-bullets">
-        <div class="proj-bullet">Built a multi-agent AI assistant using Flask and Celery to accelerate internal knowledge retrieval for support teams.</div>
-        <div class="proj-bullet">Integrated locally deployed LLMs with semantic search to query knowledge bases stored in Google Sheets.</div>
-        <div class="proj-bullet">Shipped a Slack integration delivering context-aware product knowledge directly into client-facing support conversations.</div>
-      </div>
-      <div class="proj-tags">
-        <span class="proj-tag">Python</span>
-        <span class="proj-tag">Sentence Transformers</span>
-        <span class="proj-tag">Azure CI/CD</span>
-        <span class="proj-tag">Docker</span>
-      </div>
-    </div>
-
-    <div class="proj-item">
-      <span class="proj-name">Azure Sentinel Attack Simulation</span>
-      <span class="proj-org">&mdash; Personal Project</span>
-      <div class="proj-bullets">
-        <div class="proj-bullet">Built a cloud-native SIEM lab on Azure Sentinel to emulate and analyze complex cyber attack scenarios.</div>
-        <div class="proj-bullet">Authored automated playbooks using Azure Logic Apps to accelerate threat detection, investigation, and response.</div>
-      </div>
-      <div class="proj-tags">
-        <span class="proj-tag">Azure</span>
-        <span class="proj-tag">Sentinel</span>
-        <span class="proj-tag">Logic Apps</span>
-      </div>
-    </div>
+    </div>`;
+}).join('\n\n')}
   </section>
 
   <!-- ═══════ EDUCATION & INTERESTS ═══════ -->
@@ -906,14 +670,10 @@ footer .blink {
         <span class="section-title">EDUCATION</span>
         <div class="section-line"></div>
       </div>
-      <div class="edu-item">
-        <div class="edu-degree">MSc in Software Engineering <span class="edu-ongoing">ONGOING</span></div>
-        <div class="edu-school">University of Kingston</div>
-      </div>
-      <div class="edu-item">
-        <div class="edu-degree">Foundation in Information Technology</div>
-        <div class="edu-school">University of Colombo &middot; 2017</div>
-      </div>
+${data.education.map(edu => `      <div class="edu-item">
+        <div class="edu-degree">${h.escapeHtml(edu.degree)}${edu.ongoing ? ' <span class="edu-ongoing">ONGOING</span>' : ''}</div>
+        <div class="edu-school">${h.escapeHtml(edu.school)}${edu.year ? ' &middot; ' + h.escapeHtml(edu.year) : ''}</div>
+      </div>`).join('\n')}
     </section>
 
     <section id="interests" class="reveal">
@@ -923,12 +683,7 @@ footer .blink {
         <div class="section-line"></div>
       </div>
       <div class="interest-grid">
-        <span class="interest-tag">AI &amp; Automation</span>
-        <span class="interest-tag">Software Development</span>
-        <span class="interest-tag">Research &amp; Development</span>
-        <span class="interest-tag">Cyber Security</span>
-        <span class="interest-tag">Computer Architecture</span>
-        <span class="interest-tag">Reverse Engineering</span>
+${data.interests.map(interest => `        <span class="interest-tag">${h.escapeHtml(interest.name)}</span>`).join('\n')}
       </div>
     </section>
   </div>
@@ -941,71 +696,17 @@ footer .blink {
       <div class="section-line"></div>
     </div>
 
-    <div class="training-group">
-      <div class="training-provider">SPLUNK</div>
+${data.training.map(group => {
+  const providerDisplay = group.provider.toUpperCase() === 'LINKEDIN LEARNING'
+    ? 'LYNDA.COM / LINKEDIN LEARNING'
+    : group.provider.toUpperCase();
+  return `    <div class="training-group">
+      <div class="training-provider">${providerDisplay}</div>
       <div class="training-list">
-        <span class="training-item">Splunk SOAR Certified Automation Developer</span>
+${group.courses.map(course => `        <span class="training-item">${h.formatCourse(course)}</span>`).join('\n')}
       </div>
-    </div>
-
-    <div class="training-group">
-      <div class="training-provider">COURSERA</div>
-      <div class="training-list">
-        <span class="training-item">IBM Cybersecurity Analyst</span>
-        <span class="training-item">Google Cloud Fundamentals: Core Infrastructure</span>
-        <span class="training-item">Network Security &amp; Database Vulnerabilities</span>
-        <span class="training-item">Cybersecurity Compliance Framework, Standards &amp; Regulations</span>
-        <span class="training-item">How Google does Machine Learning</span>
-        <span class="training-item">Cybersecurity Capstone: Breach Response Case Studies</span>
-        <span class="training-item">Operating Systems: Overview, Administration, and Security</span>
-      </div>
-    </div>
-
-    <div class="training-group">
-      <div class="training-provider">PLURALSIGHT</div>
-      <div class="training-list">
-        <span class="training-item">Microsoft Azure Developer</span>
-        <span class="training-item">Object-Oriented Programming Fundamentals in C#</span>
-        <span class="training-item">DevSecOps and Security Chaos Engineering</span>
-      </div>
-    </div>
-
-    <div class="training-group">
-      <div class="training-provider">LYNDA.COM / LINKEDIN LEARNING</div>
-      <div class="training-list">
-        <span class="training-item">Understanding &amp; Prioritizing Data Privacy</span>
-        <span class="training-item">Cybersecurity Foundations</span>
-        <span class="training-item">IT Security Foundations: Network Security</span>
-        <span class="training-item">Cybersecurity for IT Professionals</span>
-        <span class="training-item">Learning Secure Sockets Layer</span>
-        <span class="training-item">IT Security Foundations: Operating System Security</span>
-        <span class="training-item">IT Security Foundations: Core Concepts</span>
-        <span class="training-item">Learning Computer Security Investigation and Response</span>
-        <span class="training-item">Cybersecurity with Cloud Computing</span>
-        <span class="training-item">Learning Computer Forensics</span>
-        <span class="training-item">Cybersecurity Awareness: Social Engineering</span>
-        <span class="training-item">Learning Cryptography and Network Security</span>
-        <span class="training-item">Learning JIRA Service Desk</span>
-      </div>
-    </div>
-
-    <div class="training-group">
-      <div class="training-provider">ATTACKIQ</div>
-      <div class="training-list">
-        <span class="training-item">Foundations of Operationalizing MITRE ATT&amp;CK</span>
-        <span class="training-item">Introduction To FIN6 Emulation Plans</span>
-      </div>
-    </div>
-
-    <div class="training-group">
-      <div class="training-provider">OTHER</div>
-      <div class="training-list">
-        <span class="training-item">Introduction to Quantum Computing &middot; Qubit by Qubit</span>
-        <span class="training-item">CEH V9 Training Program &middot; CICRA Campus</span>
-        <span class="training-item">OCJP Training &middot; DreamTeam Academy</span>
-        <span class="training-item">Application Security &mdash; The Complete Guide &middot; Udemy</span>
-      </div>
-    </div>
+    </div>`;
+}).join('\n\n')}
   </section>
 
   <!-- ═══════ REFERENCES ═══════ -->
@@ -1016,24 +717,12 @@ footer .blink {
       <div class="section-line"></div>
     </div>
     <div class="ref-grid">
-      <div class="ref-card">
-        <div class="ref-name">Ruwan Fernando</div>
-        <div class="ref-role">Software Architect &middot; Axinom Pvt Ltd</div>
-        <div class="ref-loc">Sri Lanka</div>
-        <div class="ref-email">r.fernando@axinom.com</div>
-      </div>
-      <div class="ref-card">
-        <div class="ref-name">Grigory Grin</div>
-        <div class="ref-role">Chief Developer Advocate &middot; Axinom GmbH</div>
-        <div class="ref-loc">Germany</div>
-        <div class="ref-email">grin@axinom.com</div>
-      </div>
-      <div class="ref-card">
-        <div class="ref-name">Nazzamry Bin Halid</div>
-        <div class="ref-role">Ex-MSS ITSec PM &middot; Maybank</div>
-        <div class="ref-loc">Malaysia</div>
-        <div class="ref-email">+60193595126</div>
-      </div>
+${data.references.map(ref => `      <div class="ref-card">
+        <div class="ref-name">${h.escapeHtml(ref.name)}</div>
+        <div class="ref-role">${h.escapeHtml(ref.role)} &middot; ${h.escapeHtml(ref.company)}</div>
+        <div class="ref-loc">${h.escapeHtml(ref.location)}</div>
+        ${ref.email ? `<div class="ref-email">${h.escapeHtml(ref.email)}</div>` : ""}${ref.phone ? `<div class="ref-email">${h.escapeHtml(ref.phone)}</div>` : ""}
+      </div>`).join('\n')}
     </div>
   </section>
 
@@ -1148,3 +837,7 @@ navLinks.forEach(function(link) {
 
 </body>
 </html>
+`;
+}
+
+module.exports = { render };
