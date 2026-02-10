@@ -188,7 +188,7 @@
       "extendedBullets": [
         "Benchmarked leading AI products on accuracy, latency, and cost to determine enterprise deployment viability."
       ],
-      "tags": ["AI", "Azure Foundry", "LangFlow"]
+      "tags": ["AI", "Azure Foundry", "PromptFlow", "LangFlow"]
     },
     {
       "name": "Unified Authentication & Authorization Service",
@@ -348,13 +348,6 @@
       "company": "Axinom GmbH",
       "location": "Germany",
       "email": "grin@axinom.com"
-    },
-    {
-      "name": "Nazzamry Bin Halid",
-      "role": "Ex-MSS ITSec PM",
-      "company": "Maybank",
-      "location": "Malaysia",
-      "phone": "+60193595126"
     }
   ],
   "pullQuote": {
