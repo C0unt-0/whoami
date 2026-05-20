@@ -5,8 +5,7 @@
     "lastNameEmphasis": true,
     "titles": [
       "Senior Software Engineer",
-      "Security Engineer",
-      "AI & Automation"
+      "Security Engineer"
     ],
     "email": "heshnawarathna@gmail.com",
     "phone": "+601111100548",
@@ -245,6 +244,19 @@
     },
 
     {
+      "name": "Master Control Cloud Security Platform",
+      "org": "Personal Project",
+      "bullets": [
+        "Built an AWS/EKS cloud security platform with Terraform, GitLab CI/CD, Argo CD, and separated platform, security configuration, and team workload repositories.",
+        "Implemented release controls for GitLab OIDC, Terraform validation, Trivy and Gitleaks scans, OPA/Conftest checks, ZAP/Prowler evidence, SBOM generation, Cosign/KMS signing, and Kyverno admission policies."
+      ],
+      "extendedBullets": [
+        "Designed S3/SQS-backed findings ingestion with KMS encryption, private API and ingest services, a Cloudflare Access protected dashboard, and cost-aware suspend/resume states for platform and team environments."
+      ],
+      "tags": ["AWS", "EKS", "Terraform", "GitLab CI/CD", "Argo CD", "Kyverno", "Trivy", "Cosign", "S3/SQS", "KMS"]
+    },
+
+    {
       "name": "Azure Sentinel Attack Simulation",
       "org": "Personal Project",
       "bullets": [
@@ -267,7 +279,6 @@
     }
   ],
   "interests": [
-    { "name": "AI & Automation" },
     { "name": "Software Development" },
     { "name": "Research & Development" },
     { "name": "Cyber Security", "secondary": true },

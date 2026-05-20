@@ -19,7 +19,7 @@ function render(data) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pubudu Nawarathna — CV // Terminal Output</title>
-<meta name="description" content="Senior Software Engineer / Security Engineer / AI & Automation — Pubudu Nawarathna's classified terminal CV">
+<meta name="description" content="Senior Software Engineer / Security Engineer — Pubudu Nawarathna's classified terminal CV">
 <meta name="theme-color" content="#0a0a12">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -557,7 +557,6 @@ body::before {
   <div class="header-tags">
     <span class="header-tag">SENIOR_SOFTWARE_ENGINEER</span>
     <span class="header-tag">SECURITY_ENGINEER</span>
-    <span class="header-tag red">AI_&amp;_AUTOMATION</span>
   </div>
   <div class="contact-block">
     <div><span class="key">email:</span> <span class="val">${email}</span></div>

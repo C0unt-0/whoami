@@ -11,7 +11,7 @@ function render(data) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${h.escapeHtml(p.firstName)} ${h.escapeHtml(p.lastName)} — CV</title>
-<meta name="description" content="Senior Software Engineer · Security Engineer · AI & Automation — ${h.escapeHtml(p.firstName)} ${h.escapeHtml(p.lastName)}'s professional CV">
+<meta name="description" content="Senior Software Engineer · Security Engineer — ${h.escapeHtml(p.firstName)} ${h.escapeHtml(p.lastName)}'s professional CV">
 <meta name="theme-color" content="#0a0a0a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -583,7 +583,6 @@ footer .blink {
     <div class="hero-tags">
       <span class="hero-tag">SENIOR_SOFTWARE_ENG</span>
       <span class="hero-tag">SECURITY_ENG</span>
-      <span class="hero-tag">AI_&amp;_AUTOMATION</span>
     </div>
     <div class="hero-contact">
       <span class="hl">${h.escapeHtml(p.email)}</span><br>
